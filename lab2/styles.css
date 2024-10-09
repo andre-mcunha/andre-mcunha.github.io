@@ -1,0 +1,17 @@
+img {
+    display: block;            /* Faz a imagem se comportar como um bloco */
+    margin: 10px auto;         /* Adiciona margem em cima e embaixo e a centraliza horizontalmente */
+    max-width: 90%;           /* Faz a imagem não ultrapassar o tamanho da tela */
+    height: auto;              /* Mantém a proporção original da imagem */
+}
+
+#fotografias {
+    text-align: center; /* Centraliza as imagens horizontalmente */
+}
+
+#fotografias img {
+    display: inline-block; /* Permite que as imagens fiquem lado a lado */
+    width: 200px; /* Ajuste o tamanho das imagens conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    margin: 10px; /* Adiciona espaço ao redor das imagens */
+}
