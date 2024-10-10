@@ -1,0 +1,31 @@
+header {
+    text-align: center;
+}
+
+nav {
+    text-align: center;
+}
+
+nav a{
+    text-decoration-style: none;
+}
+
+.centrar {
+    text-align: center;
+}
+
+.iframe-container {
+    margin-top: 20px;
+}
+
+li:nth-child(2n){
+    color:rgb(45, 124, 221)
+}
+
+ul {
+    list-style-type: circle;
+}
+
+ol {
+    list-style: upper-roman;
+}
