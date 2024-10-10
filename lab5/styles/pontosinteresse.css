@@ -10,6 +10,33 @@
     border-radius: 40px;
 }
 
+.card {
+    border-radius: 10px;
+    width: 200px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #F6E58D;
+    display: block;
+}
+
+.card2 {
+    border-radius: 10px;
+    width: 250px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #F6E58D;
+    display: block;
+}
+
+.container {
+    background-color: #A3D9A5; /* Verde claro (inspirado nos jardins) */
+    margin: 10px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
 body {
     margin: 0px;
     padding: 0; /* Remove qualquer padding */
@@ -55,39 +82,24 @@ nav a {
     color: #333333; /* Manter a cor escura para o texto */
 }
 
-section {
-    background-color: #A3D9A5; /* Verde claro (inspirado nos jardins) */
-    margin: 10px;
-    padding-left: 10px;
-    padding-bottom: 20px;
-    padding-right: 10px;
-    padding-top: 10px;
-}
-
-section ol,
-section ul,
-section p,
-section table {
-    background-color: #F6E58D; /* Amarelo suave (dourado inspirado nas fachadas) */
-    border-radius: 10px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    display: block;
-    width: auto;
-    box-sizing: border-box;
-}
-
-#top-restaurantes h4,
-#top-monumentos h4,
-#locais-a-nao-perder h4,
-#locais-para-tirar-foto h4,
-#melhor-altura-para-visitar h4 {
+h4.titulo-1 {
     border: 1px solid black;
     border-radius: 10px;
     padding: 10px;
-    display: inline-block; 
+    display: block; 
     margin-top: 5px;
     margin-bottom: 5px;
+    width: 200px;
+}
+
+h4.titulo-2 {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    display: block; 
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 350px;
 }
 
 li:nth-child(2n) {
@@ -101,3 +113,39 @@ ul {
 ol {
     list-style: upper-roman;
 }
+
+.tabela {
+    border-radius: 30px;
+    width: 60%;
+    margin-top: 20px;
+    padding: 10px;
+    background-color: #F4D03F; /* Cor amarela suave que já está no resto do design */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Adiciona sombra sutil para destacar a tabela */
+}
+
+
+th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd; /* Adiciona uma linha sutil para separar as células */
+}
+
+th {
+    background-color: #F4D03F; /* Cor verde claro para combinar com o design */
+    color: #333333; /* Texto escuro para contraste */
+    font-weight: bold;
+}
+
+td {
+    background-color: #ffffff; /* Fundo branco para o conteúdo */
+    color: #333333; /* Texto escuro para bom contraste */
+}
+
+tr:nth-child(even) td {
+    background-color: #f0f0f0; /* Cor de fundo alternada nas linhas para maior legibilidade */
+}
+
+tr:hover {
+    background-color: #d9d9d9; /* Destaca a linha ao passar o mouse */
+}
+
