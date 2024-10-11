@@ -12,7 +12,7 @@
 
 .card {
     border-radius: 10px;
-    width: 200px;
+    width: 300px;
     padding: 20px;
     margin: 20px;
     background-color: #F6E58D;
@@ -21,7 +21,7 @@
 
 .card2 {
     border-radius: 10px;
-    width: 250px;
+    width: 350px;
     padding: 20px;
     margin: 20px;
     background-color: #F6E58D;
@@ -60,6 +60,10 @@ header {
     padding: 20px 0; 
     width: 100%; 
     box-sizing: border-box; 
+}
+
+header h1 {
+    text-transform: uppercase;
 }
 
 footer {
@@ -114,38 +118,46 @@ ol {
     list-style: upper-roman;
 }
 
+ul li,
+ol li {
+    font-size: 2em;
+}
+
 .tabela {
-    border-radius: 30px;
     width: 60%;
     margin-top: 20px;
-    padding: 10px;
-    background-color: #F4D03F; /* Cor amarela suave que já está no resto do design */
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Adiciona sombra sutil para destacar a tabela */
+    padding: 1px;
+    background-color: #ffffff; /* Cor amarela suave que já está no resto do design */
+    border: 1px solid black;
+
 }
 
-
-th, td {
-    padding: 10px;
-    text-align: left;
-    border-bottom: 1px solid #ddd; /* Adiciona uma linha sutil para separar as células */
-}
-
-th {
-    background-color: #F4D03F; /* Cor verde claro para combinar com o design */
-    color: #333333; /* Texto escuro para contraste */
-    font-weight: bold;
+tbody {
+    border: 1px solid black;
 }
 
 td {
-    background-color: #ffffff; /* Fundo branco para o conteúdo */
-    color: #333333; /* Texto escuro para bom contraste */
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
 }
 
-tr:nth-child(even) td {
-    background-color: #f0f0f0; /* Cor de fundo alternada nas linhas para maior legibilidade */
+tbody tr td,
+thead tr th {
+    border: 1px solid black;
 }
 
-tr:hover {
-    background-color: #d9d9d9; /* Destaca a linha ao passar o mouse */
+tbody tr:nth-child(2n) td,
+thead tr th {
+    background-color: #F6E58D;
 }
+
+tbody tr:nth-child(2n) td:nth-child(1),
+thead tr th:nth-child(1){
+    background-color: #4A90E2;
+    color: #ffffff;
+}
+
+
 
