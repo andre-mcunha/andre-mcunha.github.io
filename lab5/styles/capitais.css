@@ -20,12 +20,13 @@
 
   .roboto-light-italic {
     font-family: "Roboto", sans-serif;
-    font-weight: 200;
+    font-weight: 300;
     font-style: italic;
   }
 
   .autor {
-    text-align: right;
+    text-align: center;
+    margin-top: 10px;
   }
 
   
@@ -35,7 +36,7 @@
     box-sizing: border-box; /* medidas sao tomadas da borda */
 }
 
-header, main, article {
+header, article {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -55,10 +56,16 @@ header {
 
 }
 
-main article{
-    width: 100vw;
-    height: 50vh;
+main #poema{
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
 }
+
+main #paisagem, main capitais {
+    height: 100vh;
+}
+
 
 header nav {
     display: flex;
@@ -90,4 +97,38 @@ nav a:hover{
 
 nav a:active{
     color: black;
+}
+
+article div {
+    position: relative;
+    width: 100vw;  
+    height: 100vh; 
+}
+
+article div img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;  
+    height: 100%; 
+    object-fit: cover;  /* Garante que a imagem cubra todo o espaço do div sem distorção */
+    z-index: -1;
+}
+
+article div p a{
+    position: absolute; /* Permite posicionar o p em relação ao div */
+    bottom: 20px;      /* Distância do fundo do div */
+    right: 20px;       /* Distância da direita do div */
+    color: rgb(0, 0, 0); /* Fundo semi-transparente (opcional) */
+    padding: 5px 10px; /* Espacamento interno para melhorar a legibilidade */
+    z-index: 1;       /* Coloca o p acima da imagem */
+}
+article div p a:hover {
+    color: rgb(255, 255, 255); 
+}
+
+
+
+article a {
+    text-decoration: none;
 }
