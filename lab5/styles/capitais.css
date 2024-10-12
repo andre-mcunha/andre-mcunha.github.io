@@ -1,41 +1,43 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+/* Tipografias */
 .roboto-regular {
     font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-style: normal;
-  }
+}
   
-  .roboto-medium {
+.roboto-medium {
     font-family: "Roboto", sans-serif;
     font-weight: 500;
     font-style: normal;
-  }
+}
   
-  .roboto-bold {
+.roboto-bold {
     font-family: "Roboto", sans-serif;
     font-weight: 700;
     font-style: normal;
-  }
+}
 
-  .roboto-light-italic {
+.roboto-light-italic {
     font-family: "Roboto", sans-serif;
     font-weight: 300;
     font-style: italic;
-  }
-
-  .autor {
-    text-align: center;
-    margin-top: 10px;
-  }
-
-  
-* {
-    margin:0;  
-    padding:0;  
-    box-sizing: border-box; /* medidas sao tomadas da borda */
 }
 
+.autor {
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Toma as medidas desde a borda */
+}
+
+/* Layout de header e article */
 header, article {
     display: flex;
     justify-content: center;
@@ -45,28 +47,14 @@ header, article {
 
 header {
     position: sticky;
-    justify-content:space-between;
+    justify-content: space-between;
     height: 10vh;
-
-    padding: 10px 10px;
-    font-size: 1em;
-
+    padding: 10px;
     background-color: #4A90E2;
-    color: white
-
+    color: white;
 }
 
-main #poema{
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-}
-
-main #paisagem, main capitais {
-    height: 100vh;
-}
-
-
+/* Nav dentro do header */
 header nav {
     display: flex;
     align-items: center;
@@ -83,52 +71,99 @@ nav a:last-child {
     background-color: #4a61e2;
 }
 
-nav a:link{
-    color: rgb(255, 255, 255);
+/* Estados de link (a) */
+nav a:link, nav a:visited {
+    color: white;
 }
 
 nav a:visited {
     color: #bdc3e4;
 }
 
-nav a:hover{
+nav a:hover, nav a:active {
     color: black;
 }
 
-nav a:active{
-    color: black;
+/* Estrutura de conteúdo */
+main #poema, main #paisagem {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
-article div {
+/* Imagem de fundo dentro de article div */
+main #paisagem div {
     position: relative;
-    width: 100vw;  
-    height: 100vh; 
+    width: 100vw;
+    height: 100vh;
 }
 
-article div img {
+main #paisagem div img {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;  
-    height: 100%; 
-    object-fit: cover;  /* Garante que a imagem cubra todo o espaço do div sem distorção */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* Cobre o espaço sem distorção */
     z-index: -1;
 }
 
-article div p a{
-    position: absolute; /* Permite posicionar o p em relação ao div */
-    bottom: 20px;      /* Distância do fundo do div */
-    right: 20px;       /* Distância da direita do div */
-    color: rgb(0, 0, 0); /* Fundo semi-transparente (opcional) */
-    padding: 5px 10px; /* Espacamento interno para melhorar a legibilidade */
-    z-index: 1;       /* Coloca o p acima da imagem */
+/* Posicionamento do link dentro de article */
+main #paisagem div p a {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    color: rgb(0, 0, 0);
+    padding: 5px 10px;
+    z-index: 1;
 }
-article div p a:hover {
+
+main #paisagem div p a:hover {
     color: rgb(255, 255, 255); 
 }
 
-
-
 article a {
     text-decoration: none;
+}
+
+main #cidades {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; 
+    justify-content: space-between; 
+    align-items: center;
+    height: 100vh;
+
+    gap: 20px; /* Espaçamento entre os itens */
+    padding: 20px;
+    background-color: rgb(247, 227, 203);
+}
+
+/* Estilo para cada cidade */
+.cidade {
+    display: flex;
+    align-items: center;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.603);
+    margin: 20px;
+}
+
+/* Estilo da imagem */
+.cidade img {
+    width: 100px; /* Largura fixa da imagem */
+    object-fit: cover;
+    border-radius: 20px 0 0 20px; /* Bordas arredondadas para o lado esquerdo */
+}
+
+/* Estilo do nome da cidade */
+.cidade div {
+    padding: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    width: 100px;
+    height: 100%;
+}
+
+.cidade:hover {
+    background-color: white;
 }
