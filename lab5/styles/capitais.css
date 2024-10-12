@@ -37,17 +37,12 @@
     box-sizing: border-box; /* Toma as medidas desde a borda */
 }
 
-/* Layout de header e article */
-header, article {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1em;
-}
-
 header {
+    display: flex;
     position: sticky;
     justify-content: space-between;
+    align-items: center;
+    font: 1em;
     height: 10vh;
     padding: 10px;
     background-color: #4A90E2;
@@ -91,14 +86,24 @@ main #poema, main #paisagem {
     flex-direction: column;
 }
 
-/* Imagem de fundo dentro de article div */
+
+article#poema {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    height: 50vh;
+    width: 100vw;
+}
+
+
 main #paisagem div {
     position: relative;
     width: 100vw;
     height: 100vh;
 }
 
-main #paisagem div img {
+article#paisagem div img {
     position: absolute;
     top: 0;
     left: 0;
@@ -109,7 +114,7 @@ main #paisagem div img {
 }
 
 /* Posicionamento do link dentro de article */
-main #paisagem div p a {
+article#paisagem div p a {
     position: absolute;
     bottom: 20px;
     right: 20px;
@@ -126,44 +131,97 @@ article a {
     text-decoration: none;
 }
 
-main #cidades {
+article#cidades {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap; 
-    justify-content: space-between; 
-    align-items: center;
-    height: 100vh;
-
-    gap: 20px; /* Espaçamento entre os itens */
-    padding: 20px;
-    background-color: rgb(247, 227, 203);
+    justify-content: center; 
+    padding: 5vw;
+    background-color: rgb(252, 240, 226);
 }
 
-/* Estilo para cada cidade */
 .cidade {
     display: flex;
-    align-items: center;
-    border-radius: 20px;
-    background-color: rgba(255, 255, 255, 0.603);
-    margin: 20px;
+    margin: 10px;
 }
 
-/* Estilo da imagem */
 .cidade img {
     width: 100px; /* Largura fixa da imagem */
-    object-fit: cover;
     border-radius: 20px 0 0 20px; /* Bordas arredondadas para o lado esquerdo */
 }
 
-/* Estilo do nome da cidade */
 .cidade div {
-    padding: 20px;
-    text-align: center;
-    font-size: 1.2em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: 100px;
     height: 100%;
+    border-radius: 0 20px 20px 0;
+    background-color: rgba(255, 255, 255, 0.562);
 }
 
-.cidade:hover {
+.cidade div:hover {
     background-color: white;
+}
+
+
+
+/* Estilos para a seção de experimentos */
+#experimenta {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+/* Estilo do quadrado com border-radius para ser círculo */
+.circle {
+    width: 150px;
+    height: 150px;
+    background-color: #3498db;
+    border-radius: 50%; /* Border-radius igual à largura/altura cria o círculo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+
+}
+
+/* Div escondida */
+.hidden-circle {
+    width: 150px;
+    height: 150px;
+    background-color: #e74c3c;
+    border-radius: 50%;
+    display: none; /* Escondido por padrão */
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Quando passar o mouse por cima do container */
+.hover-area:hover .hidden-circle {
+    display: flex; /* Mostra o círculo escondido ao passar o mouse */
+}
+
+/* Área onde acontece o hover */
+.hover-area {
+    width: 150px;
+    height: 150px;
+    background-color: #2ecc71;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-size: 18px;
+    font-weight: bold;
+    text-align: center;
 }
