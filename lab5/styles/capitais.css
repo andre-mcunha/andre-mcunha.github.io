@@ -199,7 +199,9 @@ article#cidades {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     padding: 20px;
+    height: 50vh;
 }
 
 /* Estilo do quadrado com border-radius para ser círculo */
@@ -236,7 +238,7 @@ article#cidades {
 
 /* Quando passar o mouse por cima do container */
 .hover-area:hover .hidden-circle {
-    display: flex; /* Mostra o círculo escondido ao passar o mouse */
+    display: flex;
 }
 
 /* Área onde acontece o hover */
