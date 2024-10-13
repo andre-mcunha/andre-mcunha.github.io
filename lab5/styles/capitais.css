@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 /* Tipografias */
 .roboto-regular {
     font-family: "Roboto", sans-serif;
@@ -40,6 +44,7 @@
 header {
     display: flex;
     position: sticky;
+    top: 0;
     justify-content: space-between;
     align-items: center;
     font: 1em;
@@ -47,7 +52,9 @@ header {
     padding: 10px;
     background-color: #4A90E2;
     color: white;
+    z-index: 1000
 }
+
 
 /* Nav dentro do header */
 header nav {
@@ -55,8 +62,21 @@ header nav {
     align-items: center;
 }
 
+footer {
+    background-color: #333333;
+    color: white;
+    text-align: center;
+    padding: 15px;
+    bottom: 0;
+    width: 100%;
+    font-size: 14px;
+    font-family: "Helvetica", sans-serif;
+}
+
 nav a {
+    display: flex;
     text-decoration: none;
+    align-items: center;
     padding: 20px;
     color: white;
 }
@@ -64,6 +84,10 @@ nav a {
 nav a:last-child {
     border-radius: 10px;
     background-color: #4a61e2;
+}
+
+nav a i, nav a span.material-icons {
+    margin-right: 8px; /* Espaço entre o ícone e o texto */
 }
 
 /* Estados de link (a) */
@@ -135,7 +159,9 @@ article#cidades {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap; 
+    align-items: center;
     justify-content: center; 
+    height: 50vh;
     padding: 5vw;
     background-color: rgb(252, 240, 226);
 }
