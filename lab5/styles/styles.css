@@ -105,9 +105,13 @@ label, input {
         max-width: 100%;
 }
     
-    #fotografias img {
-        display: inline-block; /* Permite que as imagens fiquem lado a lado */
-        width: 200px; /* Ajuste o tamanho das imagens conforme necessário */
-        height: auto; /* Mantém a proporção da imagem */
-        margin: 10px; /* Adiciona espaço ao redor das imagens */
-    }
+#fotografias img {
+    display: inline-block; /* Permite que as imagens fiquem lado a lado */
+    width: 200px; /* Ajuste o tamanho das imagens conforme necessário */
+    height: auto; /* Mantém a proporção da imagem */
+    margin: 10px; /* Adiciona espaço ao redor das imagens */
+}
+
+section#fotografias img {
+    cursor: zoom-in;
+}
