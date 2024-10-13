@@ -6,11 +6,12 @@ body {
 }
 
 nav {
-    background-color: #FFD700;
-    color: #333333;
+    background-color: #F4D03F; /* Amarelo ouro (inspirado nos azulejos) */
+    color: #333333; /* Cor de texto escuro para bom contraste */
     text-align: center;
-    font-family: "Helvetica", sans-serif;
-    padding: 10px;
+    font-family: 'Montserrat', sans-serif;    padding: 10px;
+    margin: 5px 10px 10px 10px; 
+    border-radius: 10px;
 }
 
 nav a {
@@ -63,7 +64,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-a {
+nav a {
     color: #222220; 
 }
 
