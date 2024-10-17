@@ -1,0 +1,176 @@
+/*
+1-Propriedades de posicionamento: afetam a disposição e o fluxo do layout.
+
+display
+
+position
+
+float
+
+z-index
+
+2-Propriedades de caixa (Box Model): controlam o tamanho e as margens da caixa.
+
+width, height
+
+margin, padding
+
+border, border-radius
+
+3-Propriedades tipográficas: afetam texto e fontes.
+
+font, line-height, text-align
+
+4-Propriedades de cor e fundo: afetam as cores de texto e fundos.
+
+color, background
+
+5-Outras propriedades de layout e comportamento: propriedades adicionais, como alinhamento e animações.
+
+Exemplo:
+
+Copy
+article {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  width: 100px;
+  height: 100%;
+  border-radius: 0 20px 20px 0;
+  
+  font-weight: bold;
+  
+  background: white;
+}
+
+
+Mobile portrait
+
+Mobile landscape
+
+Tablet
+
+Laptop
+
+4K
+  */
+  
+  * {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+
+}
+
+  header {grid-area: header-area;}
+  nav {grid-area: nav-area;}
+  aside {grid-area: aside-area;}
+  main {grid-area: main-area;}
+  footer {grid-area: footer-area;}
+
+
+  @media(max-width:480px) {
+    body {
+        display: grid;
+        width: 100vw;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 20vh 7vh 1fr 7vh 7vh;
+
+        grid-template-areas:
+        'header-area'
+        'nav-area'
+        'main-area'
+        'aside-area'
+        'footer-area';
+
+        background-color: lightblue;
+    }
+    
+    Header {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 5vw;
+        padding: 5px;
+    }
+  }
+
+ /* Mobile Landscape */
+@media (min-width: 481px) and (max-width: 767px) {
+    body {
+        display: grid;
+        width: 100vw;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 20vh 7vh 1fr 7vh 7vh;
+
+        grid-template-areas:
+        'header-area'
+        'nav-area'
+        'aside-area'
+        'main-area'
+        'footer-area';
+
+        background-color: lightgreen;
+    }
+}
+
+/* Tablet */
+@media (min-width: 768px) and (max-width: 1023px) {
+    body {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+
+        grid-template-columns: 20vw 1fr;
+        grid-template-rows: 15vh 1fr 1fr 10vw;
+
+        grid-template-areas:
+        'header-area header-area'
+        'nav-area aside-area'
+        'nav-area main-area'
+        'footer-area footer-area';
+
+        background-color: lightyellow;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
+
+/* Laptop */
+@media (min-width: 1024px) and (max-width: 1440px) {
+    body {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 15vh 1fr 1fr 10vw;
+
+        grid-template-areas:
+        'header-area header-area'
+        'nav-area nav-area'
+        'main-area aside-area'
+        'footer-area footer-area';
+        
+        background-color: lightcoral;
+    }
+
+    aside {
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+/* 4K */
+@media (min-width: 2560px) {
+    body {
+        background-color: lightpink;
+    }
+}
