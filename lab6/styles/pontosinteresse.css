@@ -1,0 +1,172 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&family=Lora:wght@700&family=Montserrat:wght@400&family=Playfair+Display:wght@400&family=Lato:wght@400&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+.centrar {
+    text-align: center;
+}
+
+.iframe-container {
+    margin-top: 20px;
+}
+
+.iframe-container iframe {
+    border-radius: 40px;
+}
+
+.card {
+    border-radius: 10px;
+    width: 350px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #F6E58D;
+    display: block;
+}
+
+.card2 {
+    border-radius: 10px;
+    width: 450px;
+    padding: 20px;
+    margin: 20px;
+    background-color: #F6E58D;
+    display: block;
+}
+
+.container {
+    background-color: #A3D9A5; /* Verde claro (inspirado nos jardins) */
+    margin: 10px;
+    padding-left: 10px;
+    padding-bottom: 20px;
+    padding-right: 10px;
+    padding-top: 10px;
+}
+
+body {
+    display: inline-box;
+    margin: 0px;
+    padding: 0; /* Remove qualquer padding */
+    background-color: #f7f7f7; /* Cor de fundo neutra */
+    font-family: 'Roboto', sans-serif;
+}
+
+main {
+    padding-top: 1px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 10px;
+    background-color: bisque; /* Cor suave e neutra */
+}
+
+header {
+    color: white;
+    background-color: #4A90E2; /* Azul claro (relacionado ao céu) */
+    text-align: center;
+    margin: 0px; 
+    padding: 20px 0; 
+    width: 100%; 
+    box-sizing: border-box; 
+    font-family: 'Lora', serif;
+}
+
+header h1 {
+    text-transform: uppercase;
+    font-family: 'Lora', serif;
+}
+
+footer {
+    text-align: center;
+}
+
+nav {
+    background-color: #F4D03F; /* Amarelo ouro (inspirado nos azulejos) */
+    color: #333333; /* Cor de texto escuro para bom contraste */
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;    padding: 10px;
+    margin: 5px 10px 10px 10px; 
+    border-radius: 10px;
+}
+
+nav a {
+    text-decoration: none;
+    padding: 5px;
+    color: #333333;
+    font-family: 'Montserrat', sans-serif; /* Fonte para os links do menu */
+}
+
+h4.titulo-1,
+h4.titulo-2 {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 10px;
+    display: block;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    width: 200px;
+    font-family: 'Playfair Display', serif; /* Fonte para títulos */
+}
+
+h4.titulo-2 {
+    width: 350px;
+}
+
+li:nth-child(2n) {
+    color: rgb(45, 124, 221); /* Azul forte (para destacar itens pares) */
+}
+
+ul {
+    list-style-type: circle;
+    font-family: 'Lato', sans-serif;
+}
+
+ol {
+    list-style: upper-roman;
+    font-family: 'Lato', sans-serif;
+}
+
+ul li, ol li {
+    font-size: 2em;
+    font-family: 'Lato', sans-serif;
+}
+
+.tabela {
+    width: 60%;
+    margin-top: 20px;
+    padding: 1px;
+    background-color: #ffffff; /* Cor amarela suave que já está no resto do design */
+    border: 1px solid black;
+
+}
+
+tbody {
+    border: 1px solid black;
+}
+
+td {
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-top: 1px;
+    padding-bottom: 1px;
+}
+
+tbody tr td,
+thead tr th {
+    border: 1px solid black;
+}
+
+tbody tr:nth-child(2n) td,
+thead tr th {
+    background-color: #F6E58D;
+}
+
+tbody tr:nth-child(2n) td:nth-child(1),
+thead tr th:nth-child(1){
+    background-color: #4A90E2;
+    color: #ffffff;
+}
+
+
+

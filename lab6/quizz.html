@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt">
+    <head>
+        <meta name="viewport"
+        content="width=device-width,
+        initial-scale=1.0"
+        charset="UTF-8">        <title>Lisboa</title>
+        <link rel="stylesheet" href="styles/styles.css">
+    </head>
+
+    <body>
+        <header>
+            <h1>Lisboa</h1>
+        </header>
+
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="local.html">Localização</a>
+            <a href="multimedia.html">Multimédia</a>
+            <a href="info.html">Informação</a>
+            <a href="quizz.html">Quizz</a>
+            <a href="viagem.html">Viagem</a>
+            <a href="pontosinteresse.html">Pontos de Interesse</a>
+            <a href="capitais.html">Capitais</a>
+        </nav>
+
+        <img src="images/lisboa.jpg" alt="Lisboa">
+
+
+        <main>
+            <h2>Quizz</h2>
+
+            <form method="get" action="https://postman-echo.com/get">
+                <fieldset>
+                    <label for="nome">Nome:</label>
+                    <input type="text" name="nome" id="nome" placeholder="insira nome">
+    
+                    <label for="apelido">Apelido:</label>
+                    <input type="text" name="apelido" id="apelido" placeholder="insira apelido">
+    
+                    <label for="email">Email:</label>
+                    <input type="email" name="email" id="email" placeholder="insira email">
+                </fieldset>
+
+                
+                <fieldset>
+                    <legend>Quizz sobre Lisboa</legend>
+
+                    <!-- Pergunta 1: Melhor época para visitar Lisboa -->
+                    <p>Qual é a melhor época do ano para visitar Lisboa?</p>
+                    <label for="primavera">Primavera</label>
+                    <input type="radio" id="primavera" name="epoca" value="primavera" required>
+
+                    <label for="verao">Verão</label>
+                    <input type="radio" id="verao" name="epoca" value="verao">        
+
+                    <label for="outono">Outono</label>
+                    <input type="radio" id="outono" name="epoca" value="outono">
+                    
+                    <label for="inverno">Inverno</label>
+                    <input type="radio" id="inverno" name="epoca" value="inverno">
+                    <br></br>
+           
+
+                    <!-- Pergunta 2: Monumentos icónicos -->
+                    <p>Selecione os monumentos que já visitou em Lisboa:</p>
+                    <label for="torre">Torre de Belém</label>
+                    <input type="checkbox" id="torre" name="monumentos" value="torre_belem">
+                    
+                    <label for="jeronimos">Mosteiro dos Jerónimos</label>
+                    <input type="checkbox" id="jeronimos" name="monumentos" value="jeronimos">
+                    
+                    <label for="castelo">Castelo de São Jorge</label>
+                    <input type="checkbox" id="castelo" name="monumentos" value="castelo_s_jorge">
+                    
+                    <label for="cristo">Cristo Rei</label>
+                    <input type="checkbox" id="cristo" name="monumentos" value="cristo_rei">
+                    <br></br>
+
+
+                    <!-- Pergunta 3: Quantos dias para explorar Lisboa? -->
+                    <label for="dias">Quantos dias recomenda para explorar Lisboa?</label>
+                    <input type="number" id="dias" name="dias" min="1" max="30" value="3" step="1" required>
+                    <br></br>
+
+
+
+                    <!-- Pergunta 4: Cor favorita para representar Lisboa -->
+                    <label for="cor_lisboa">Escolha uma cor que represente Lisboa:</label>
+                    <input type="color" id="cor_lisboa" name="cor_lisboa" value="#ffcc00">
+                    <br></br>
+
+
+
+                    <!-- Pergunta 5: Que intensidade de aventura prefere? -->
+                    <label for="aventura">Qual a intensidade da sua aventura pela cidade (0 - muito relaxante, 100 - extremamente aventureira)?</label>
+                    <input type="range" id="aventura" name="aventura" min="0" max="100" step="10" value="50">
+                    <br></br>
+
+
+
+                    <!-- Pergunta 6: Quando pretende visitar Lisboa novamente? -->
+                    <label for="data_visita">Quando pretende visitar Lisboa novamente?</label>
+                    <input type="date" id="data_visita" name="data_visita" required>
+                    <br></br>
+
+
+
+                    <!-- Pergunta 7: Melhor hora para ver o pôr do sol em Lisboa -->
+                    <label for="hora_pordosol">Qual é a melhor hora para ver o pôr do sol em Lisboa?</label>
+                    <input type="time" id="hora_pordosol" name="hora_pordosol" required>
+                    <br></br>
+
+
+
+                    <!-- Pergunta 8: Uma experiência inesquecível em Lisboa -->
+                    <label for="experiencia">Descreva uma experiência inesquecível que já teve em Lisboa:</label>
+                    <textarea id="experiencia" name="experiencia" rows="4" cols="50" maxlength="200" placeholder="Escreva aqui a sua experiência..."></textarea>
+                    <br></br>
+
+
+                    <!-- Pergunta 9: Escolha uma imagem que represente Lisboa -->
+                    <!--<label for="imagem_lisboa">Envie uma imagem que represente a sua ideia de Lisboa:</label>
+                    <input type="image" id="imagem_lisboa" src="imagem_exemplo.jpg" alt="Clique para selecionar uma imagem">
+                    <br></br> -->                    
+                </fieldset>
+
+                <input type="submit" value="Submeter Quizz">
+                <input type="reset" value="Limpar Formulário">
+
+            </form>
+            
+
+            
+        </main>
+
+        <footer>
+            <p>DIW 2024</p>
+        </footer>
+
+    </body>
+    
+</html>
+
