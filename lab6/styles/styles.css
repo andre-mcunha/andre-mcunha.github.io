@@ -120,3 +120,7 @@ label, input {
 section#fotografias img {
     cursor: zoom-in;
 }
+
+.dropbtn {
+    display: none;
+}
