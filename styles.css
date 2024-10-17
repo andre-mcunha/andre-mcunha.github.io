@@ -1,3 +1,63 @@
 body {
     background-color: #b3b3b3;
 }
+
+/* Animação do título - desliza de baixo para cima */
+@keyframes slideUp {
+    0% {
+        transform: translateY(100px); /* Começa abaixo */
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0); /* Termina na posição normal */
+        opacity: 1;
+    }
+}
+
+/* Animação da imagem - efeito de pulsação */
+@keyframes pulse {
+    0% {
+        transform: scale(1); /* Tamanho normal */
+    }
+    50% {
+        transform: scale(1.1); /* 10% maior no meio */
+    }
+    100% {
+        transform: scale(1); /* Volta ao tamanho normal */
+    }
+}
+
+/* animação ao título */
+h1 {
+    animation: slideUp 2s ease-out; /* 2 segundos de duração, efeito suave */
+}
+
+/*animação à imagem */
+img {
+    animation: pulse 3s infinite; /* 3 segundos, repetição infinita */
+    transition: transform 0.3s ease-in-out;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    margin-top: 30px;
+}
+
+/* Links */
+a {
+    color: blue;
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: underline;
+}
+
+li {
+    text-align: left;
+}

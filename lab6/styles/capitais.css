@@ -255,3 +255,117 @@ article#cidades {
     font-weight: bold;
     text-align: center;
 }
+
+
+/* Estilo do container de parallax */
+.parallax-container {
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+}
+
+/* Imagem de fundo com efeito de parallax */
+.parallax-bg {
+    background-image: url(https://cdn.pixabay.com/photo/2021/01/29/09/33/beach-5960371_1280.jpg); /* Substitua pelo URL da imagem desejada */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-attachment: fixed; /* Este atributo cria o efeito de parallax */
+    background-position: center;
+    z-index: -1; /* Mantém a imagem atrás do conteúdo */
+}
+
+/* Conteúdo texto que se desloca sobre a imagem */
+.content {
+    position: relative;
+    z-index: 1; /* O texto estará sobre a imagem */
+    color: white;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente para melhor legibilidade */
+    max-width: 600px;
+    margin: 50px auto;
+}
+
+.content h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.content p {
+    font-size: 1.2em;
+    line-height: 1.5;
+}
+
+
+/* Estilos para o <article> da galeria */
+.galeria {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 30px;
+}
+
+/* Cada bloco de imagem e texto */
+.foto {
+    width: 300px;
+    text-align: center;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.foto img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Texto abaixo das fotos */
+.foto p {
+    padding: 10px;
+    margin: 0;
+    font-size: 1em;
+    color: #333;
+}
+
+/* Estilo para imagens com transformações */
+.transform {
+    transform: rotate(-5deg); /* Aplica uma leve rotação */
+}
+
+/* Rotação aplicada */
+.transform1 {
+    transform: rotate(10deg); /* Rotação de 10 graus */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Escala aplicada */
+.transform2 {
+    transform: scale(1.1); /* Aumenta a escala para 110% */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Inclinação aplicada */
+.transform3 {
+    transform: skewX(15deg); /* Inclinação de 15 graus no eixo X */
+    transition: transform 0.3s ease-in-out;
+}
+
+/* Efeito de hover nas imagens */
+.hover-effect:hover img {
+    filter: grayscale(100%); /* Aplica efeito de escala de cinza no hover */
+    transition: filter 0.5s ease;
+}
+
+/* Responsividade: ajusta as colunas para telas menores */
+@media (max-width: 768px) {
+    .foto {
+        width: 100%;
+    }
+}
