@@ -192,10 +192,13 @@ Laptop
         background-color: lightyellow;
     }
 
-    nav {
+    nav .dropdown-content{
         display: flex;
+        width: 15%;
         flex-direction: column;
         justify-content: space-between;
+        position: fixed;
+        align-items: center;
     }
 }
 
