@@ -115,7 +115,7 @@ body {
         'header-area header-area'
         'main-area aside-area'
         'introducao-area nav-area'
-        'footer-area';
+        'footer-area footer-area';
 
         padding: 20px;
         gap: 20px;
@@ -132,7 +132,7 @@ body {
     background-color: gray;
 }
 
-#introducao, #linguagens {
+#head, #introducao, body nav, body aside, #linguagens {
     background-color: gray;
     border-radius: 10px;
 }
