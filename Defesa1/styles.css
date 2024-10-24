@@ -1,0 +1,138 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+header {
+    grid-area: header-area;
+}
+  nav {
+    grid-area: nav-area;
+}
+  aside {
+    grid-area: aside-area;
+}
+  main {
+    grid-area: main-area;
+}
+  footer {
+    grid-area: footer-area;
+}
+
+#introducao {
+    grid-area: introducao-area;
+}
+
+@media(max-width:480px) {
+    body {
+        display: grid;
+        width: 100vw;
+
+        grid-template-columns: 1fr;
+        grid-template-rows: 20% 1fr 1fr 15% ;
+
+        grid-template-areas:
+        'header-area'
+        'main-area'
+        'introducao-area'
+        'nav-area'
+        'footer-area';
+
+        padding: 20px;
+        gap: 20px;
+        background-color: black;
+    }
+
+    img {
+        display: none;
+    }
+
+    #head, #introducao, nav, aside, #linguagens {
+        background-color: gray;
+        border-radius: 10px;
+    }
+
+    #linguagens, #introducao {
+        padding: 20px;;
+    }
+
+    #introducao ul {
+        margin-left: 40px;
+    }
+
+    #head {
+        display: flex;
+        justify-content:space-between;
+        align-items: center;
+        border-radius: 10px;
+        width: 100vw;
+        padding: 20px;
+        background-color: gray;
+    }
+
+    footer {
+        background-color: gray;
+        justify-content: center;
+        align-items: center;
+    }
+
+    #navegacao {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+
+    }
+
+    #navegacao div {
+        border-radius: 10px;
+        background-color: rgb(67, 64, 64);
+        padding: 20px;
+        width: 15vw;
+    }
+
+    #navegacao a {
+        text-decoration: none;
+    }
+}
+
+
+
+img {
+    width: 300px;
+    height: 300px;
+}
+
+body {
+    display: grid;
+        width: 100vw;
+
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 20% 1fr 1fr 15% ;
+
+        grid-template-areas:
+        'header-area header-area'
+        'main-area aside-area'
+        'introducao-area nav-area'
+        'footer-area';
+
+        padding: 20px;
+        gap: 20px;
+        background-color: black;
+}
+
+#head {
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+    border-radius: 10px;
+    width: 100vw;
+    padding: 20px;
+    background-color: gray;
+}
+
+#introducao, #linguagens {
+    background-color: gray;
+    border-radius: 10px;
+}
