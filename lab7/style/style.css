@@ -23,3 +23,13 @@ button {
     padding-right: 3px;
     margin-right: 5px;
 }
+
+nav {
+    display: flex;
+    justify-content: center;
+}
+
+nav a {
+    text-decoration: none;
+
+}

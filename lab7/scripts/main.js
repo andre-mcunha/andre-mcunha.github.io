@@ -35,7 +35,19 @@ function pintar() {
 
 
 //3.Experimenta escrever...---------------------------------------------------
+const fraseInput = document.getElementById("frase");
 
+fraseInput.addEventListener('keydown', mudaCor);
+
+function mudaCor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+    }
+
+    fraseInput.style.backgroundColor = color;
+}
 
 
 //4.Escolhe uma cor em ingles:
@@ -50,7 +62,7 @@ function mudaCorFundo () {
 }
 
 //5.Conta---------------------------------------------------------------------
-const botaoConta = document.getElementById("5")
+const botaoConta = document.getElementById("g")
 const counter = document.getElementById("counter")
 let contagem = 0
 
