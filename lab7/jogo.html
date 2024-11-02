@@ -13,6 +13,7 @@
     </header>
 
     <div id="game-container">
+        <!-- Tabuleiro -->
         <div id="board">
             <div class="cell" id="cell-1">1</div>
             <div class="cell" id="cell-2">2</div>
@@ -28,14 +29,24 @@
             <div class="cell" id="cell-12">12</div>
         </div>
         
+        <!-- Peças do Jogo e Escolha de Nomes -->
         <div id="pieces">
-            <h2>Peças do Jogo</h2>
-            <div class="piece" id="piece-1">Peça 1</div>
-            <div class="piece" id="piece-2">Peça 2</div>
-            <div class="piece" id="piece-3">Peça 3</div>
+            <h2>Escolha os Nomes das Peças</h2>
+            <label for="piece-1-name">Peça 1:</label>
+            <input type="text" id="piece-1-name" placeholder="Nome da Peça 1"><br>
+
+            <label for="piece-2-name">Peça 2:</label>
+            <input type="text" id="piece-2-name" placeholder="Nome da Peça 2"><br>
+
+            <label for="piece-3-name">Peça 3:</label>
+            <input type="text" id="piece-3-name" placeholder="Nome da Peça 3"><br>
         </div>
 
-        <button id="start-game">Iniciar Jogo</button>
+        <!-- Botões de controle -->
+        <div id="controls">
+            <button id="start-game">Iniciar Jogo</button>
+            <button id="reset-game">Reiniciar Jogo</button>
+        </div>
     </div>
 
     <footer>
