@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style/stylejogo.css">
+    <title>Jogo de Tabuleiro</title>
+</head>
+<body>
+    <header>
+        <h1>Jogo de Tabuleiro Aventura</h1>
+        <p>Prepare-se para uma emocionante jornada!</p>
+    </header>
+
+    <div id="game-container">
+        <!-- Tabuleiro -->
+        <div id="board">
+            <div class="cell" id="cell-1">1</div>
+            <div class="cell" id="cell-2">2</div>
+            <div class="cell" id="cell-3">3</div>
+            <div class="cell" id="cell-4">4</div>
+            <div class="cell" id="cell-5">5</div>
+            <div class="cell" id="cell-6">6</div>
+            <div class="cell" id="cell-7">7</div>
+            <div class="cell" id="cell-8">8</div>
+            <div class="cell" id="cell-9">9</div>
+            <div class="cell" id="cell-10">10</div>
+            <div class="cell" id="cell-11">11</div>
+            <div class="cell" id="cell-12">12</div>
+        </div>
+        
+        <!-- Peças do Jogo e Escolha de Nomes -->
+        <div id="pieces">
+            <h2>Escolha os Nomes das Peças</h2>
+            <label for="piece-1-name">Peça 1:</label>
+            <input type="text" id="piece-1-name" placeholder="Nome da Peça 1"><br>
+
+            <label for="piece-2-name">Peça 2:</label>
+            <input type="text" id="piece-2-name" placeholder="Nome da Peça 2"><br>
+
+            <label for="piece-3-name">Peça 3:</label>
+            <input type="text" id="piece-3-name" placeholder="Nome da Peça 3"><br>
+        </div>
+
+        <!-- Botões de controle -->
+        <div id="controls">
+            <button id="start-game">Iniciar Jogo</button>
+            <button id="reset-game">Reiniciar Jogo</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 Jogo de Tabuleiro Aventura</p>
+    </footer>
+
+    <script src="scripts/jogo.js"></script>
+</body>
+</html>
