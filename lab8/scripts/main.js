@@ -45,12 +45,39 @@ document.querySelector("#escolhe").onchange = (e) => {
 
 
 //5.Conta---------------------------------------------------------------------
+if (!localStorage.getItem('counter')) {
+    localStorage.setItem('counter', 0);
+}
+
 const botaoConta = document.getElementById("g")
-const counter = document.getElementById("counter")
-let contagem = 0
 
 botaoConta.addEventListener('click', () => {
-    counter.textContent = ++contagem;
+    let counter = localStorage.getItem("counter");
+    counter++;
+    document.getElementById('texto-counter').textContent = counter;
+    localStorage.setItem('counter', counter)
 });
 
+document.getElementById('texto-counter').textContent = localStorage.getItem('counter');
 
+
+
+//6.Submit--------------------------------------------------------------------
+document.querySelector("form").onsubmit = (e) => {
+    e.preventDefault()
+
+    const nome = document.getElementById("nome").value;
+    const idade = document.getElementById("idade").value;
+
+    document.querySelector("form").querySelector("p").textContent = `Olá, o ${nome} tem ${idade}!`
+};
+
+
+//7. Contador automático-----------------------------------------------------------
+let contador = 0;
+const contadorElemento = document.getElementById("auto-counter");
+
+setInterval(() => {
+    contador++;
+    contadorElemento.textContent = contador;
+}, 1000);
