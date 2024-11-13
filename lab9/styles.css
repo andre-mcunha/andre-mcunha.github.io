@@ -35,10 +35,6 @@ main {
     justify-content: center;
 }
 
-#produtos {
-    flex-wrap: wrap;
-}
-
 
 footer {
     display: flex;
