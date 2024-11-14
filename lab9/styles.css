@@ -30,9 +30,20 @@ header ul a {
 }
 
 main {
-    display: flex;
-    width: 100vw;
-    justify-content: center;
+    padding: 50px;
+}
+
+article img {
+    max-width: 100%;
+}
+
+#caixa-produtos {
+    display: grid;
+}
+
+.cartao-artigo {
+    width: 100px;
+    height: 150px;
 }
 
 
