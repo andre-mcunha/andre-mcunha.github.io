@@ -1,6 +1,8 @@
 const artigos_disponiveis = document.getElementById('caixa-produtos');
 
-let caixaCesto = JSON.parse(localStorage.getItem('caixa-cesto')) || [];
+let cesto = JSON.parse(localStorage.getItem('cesto')) || [];
+
+atualizarCestoUI();
 
 produtos.forEach( prod => {
     const e = document.createElement('article');
@@ -35,11 +37,52 @@ produtos.forEach( prod => {
 
 
 function adicionarAoCesto (prod) {
-    caixaCesto.push(prod);
+    cesto.push(prod);
 
-    localStorage.setItem('caixaCesto', JSON.stringify(caixaCesto));
+    localStorage.setItem('cesto', JSON.stringify(cesto));
 
     atualizarCestoUI();
     
 };
 
+function removerDoCesto (index) {
+    // Remove produto do cesto
+    cesto.splice(index, 1);
+
+    localStorage.setItem('cesto', JSON.stringify(cesto));
+
+    atualizarCestoUI();
+}
+
+function atualizarCestoUI () {
+    const caixaCesto = document.getElementById('caixa-cesto');
+    caixaCesto.innerHTML = '';
+
+    cesto.forEach((prod, index) => {
+    const e = document.createElement('article');
+    e.setAttribute('class', 'cartao-artigo2');
+
+    const titulo = document.createElement('h3');
+    titulo.textContent = prod.title;
+    e.append(titulo);
+
+    const imagem = document.createElement('img');
+    imagem.setAttribute('src', `${prod.image}`);
+    imagem.setAttribute('alt', 'Artigo');
+    e.append(imagem);
+
+    const preco = document.createElement('p');
+    preco.textContent = `Custo total: ${prod.price} €`;
+    e.append(preco);
+
+    const botao = document.createElement('button');
+    botao.setAttribute('id', 'botao-remover');
+    botao.textContent = '- Remover do Cesto';
+    botao.addEventListener('click', () => removerDoCesto(index));
+    e.append(botao);
+
+    caixaCesto.append(e);
+    });
+
+
+}
