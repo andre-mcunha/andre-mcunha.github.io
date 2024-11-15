@@ -99,11 +99,13 @@ article img {
 }
 
 #cesto {
+    padding: 50px;
     background-color: rgb(107, 21, 107);
 
 }
 
 #cesto h2 {
+    text-align: center;
     color: aliceblue;
 
 }

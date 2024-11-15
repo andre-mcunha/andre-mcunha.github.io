@@ -55,6 +55,7 @@ function removerDoCesto (index) {
 }
 
 function atualizarCestoUI () {
+    let precoTotal = 0;
     const caixaCesto = document.getElementById('caixa-cesto');
     caixaCesto.innerHTML = '';
 
