@@ -60,6 +60,10 @@ function atualizarCestoUI () {
     caixaCesto.innerHTML = '';
 
     cesto.forEach((prod, index) => {
+
+    precoTotal += parseFloat(prod.price);
+    
+
     const e = document.createElement('article');
     e.setAttribute('class', 'cartao-artigo2');
 
@@ -85,5 +89,12 @@ function atualizarCestoUI () {
     caixaCesto.append(e);
     });
 
+    localStorage.setItem('precoTotal', precoTotal.toFixed(2));
+
+    // Atualiza o preço total na interface
+    const precoTotalElemento = document.getElementById('preco-total');
+    if (precoTotalElemento) {
+        precoTotalElemento.textContent = `Preço Total: ${precoTotal.toFixed(2)} €`;
+    }
 
 }

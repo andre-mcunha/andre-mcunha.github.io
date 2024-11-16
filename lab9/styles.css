@@ -104,7 +104,7 @@ article img {
 
 }
 
-#cesto h2 {
+#cesto h2, #preco-total {
     text-align: center;
     color: aliceblue;
 
