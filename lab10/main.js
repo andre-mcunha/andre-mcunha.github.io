@@ -9,6 +9,10 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(data => renderizarProdutos(data))
         .catch(error => console.error('Erro ao carregar produtos:', error));
     
+        fetch(`${API_BASE_URL}/categories/`)
+        .then(response => response.json())
+        .then(data => definirCategorias(data))
+        .catch(error => console.error('Erro ao carregar categorias:', error));
     atualizarCestoUI();
 });
 
@@ -110,3 +114,15 @@ function atualizarCestoUI () {
     }
 
 }
+
+function definirCategorias(data) {
+
+    const e = document.getElementById('filtros');
+
+    data.forEach(categoria => {
+        const option = document.createElement('option');
+        option.value = categoria;
+        option.textContent = categoria;
+        e.append(option);
+    })
+};
