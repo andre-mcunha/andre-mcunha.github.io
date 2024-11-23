@@ -158,5 +158,41 @@ function definirCategorias(data) {
 }
 
 function pedidoCompra () {
-    
+
+    //Recolher info para criar o body do pedido
+    const produtosIds = cesto.map(prod => prod.id); // Extrai os IDs dos produtos no cesto
+    const isEstudante = document.querySelector('input[name="estudante_deisi"]').checked;
+    const cupao = document.getElementById('cupao')?.value || '';
+
+    //Cosntruir corpo do POST
+    const corpoPost = {
+        products: produtosIds,
+        student: isEstudante,
+        coupon: cupao
+      };
+
+
+    // Fazer a requisição POST
+    fetch(`${API_BASE_URL}/buy/`, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(corpoPost)
+    })
+        .then(response => response.json())
+        .then(data => {
+            // Tratar a resposta
+        const precoFinal = data.totalCost || "N/A";
+        const referenciaPagamento = data.reference || "N/A";
+
+        const pPrecoTotal = document.querySelector("#report-compra h3");
+        const pReferencia = document.querySelector("#report-compra p");
+        
+       
+        pPrecoTotal.textContent = `Valor final a pagar (com eventuais descontos): ${parseFloat(precoFinal).toFixed(2)} €`;       
+        pReferencia.textContent = `Referência de pagamento: ${referenciaPagamento}`;
+        
+        })
+        .catch(error => console.error('Erro ao processar a compra:', error));
 }
