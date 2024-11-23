@@ -27,6 +27,9 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('filtros').addEventListener('change', filtrarProdutos);
 document.getElementById('ordenar').addEventListener('change', ordenarProdutos);
 
+// Listener para botao de compra
+document.getElementById('botao-comprar').addEventListener('click', pedidoCompra);
+
 function filtrarProdutos() {
     const categoriaSelecionada = document.getElementById('filtros').value;
 
@@ -139,7 +142,7 @@ function atualizarCestoUI() {
 
     const precoTotalElemento = document.getElementById('preco-total');
     if (precoTotalElemento) {
-        precoTotalElemento.textContent = `Preço Total: ${precoTotal.toFixed(2)} €`;
+        precoTotalElemento.textContent = `Preço Final: ${precoTotal.toFixed(2)} €`;
     }
 }
 
@@ -152,4 +155,8 @@ function definirCategorias(data) {
         option.textContent = categoria;
         e.append(option);
     });
+}
+
+function pedidoCompra () {
+    
 }
