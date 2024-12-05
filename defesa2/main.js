@@ -26,12 +26,16 @@ document.addEventListener('DOMContentLoaded', () => {
 // Listeners para filtros e ordenação
 document.getElementById('filtros').addEventListener('change', filtrarProdutos);
 document.getElementById('ordenar').addEventListener('change', ordenarProdutos);
-document.getElementById('botao-adicionartudo').addEventListener('click', adicionarTodos);
-document.getElementById('botao-menosinfo').addEventListener('click', renderizar);
+
 
 
 // Listener para botao de compra
 document.getElementById('botao-comprar').addEventListener('click', pedidoCompra);
+
+//Listeners para novos botoes
+document.getElementById('botao-adicionartudo').addEventListener('click', adicionarTodos);
+document.getElementById('botao-menosinfo').addEventListener('click', renderizar);
+
 
 function filtrarProdutos() {
     const categoriaSelecionada = document.getElementById('filtros').value;
@@ -235,14 +239,16 @@ function pedidoCompra () {
             // Tratar a resposta
         const precoFinal = data.totalCost || "N/A";
         const referenciaPagamento = data.reference || "N/A";
+        const morada = data.address|| "N/A";
 
         const pPrecoTotal = document.querySelector("#report-compra h3");
         const pReferencia = document.querySelector("#report-compra p");
+        const addres = document.getElementById('morada');
         
        
         pPrecoTotal.textContent = `Valor final a pagar (com eventuais descontos): ${parseFloat(precoFinal).toFixed(2)} €`;       
         pReferencia.textContent = `Referência de pagamento: ${referenciaPagamento}`;
-        
+        addres.textContent = `Morada: ${morada}`;
         })
         .catch(error => console.error('Erro ao processar a compra:', error));
 }
