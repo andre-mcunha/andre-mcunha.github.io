@@ -26,6 +26,9 @@ document.addEventListener('DOMContentLoaded', () => {
 // Listeners para filtros e ordenação
 document.getElementById('filtros').addEventListener('change', filtrarProdutos);
 document.getElementById('ordenar').addEventListener('change', ordenarProdutos);
+document.getElementById('botao-adicionartudo').addEventListener('click', adicionarTodos);
+document.getElementById('botao-menosinfo').addEventListener('click', renderizar(listaArtigos));
+
 
 // Listener para botao de compra
 document.getElementById('botao-comprar').addEventListener('click', pedidoCompra);
@@ -47,13 +50,46 @@ function ordenarProdutos() {
     let produtosOrdenados = listaArtigos; // Cria uma cópia para evitar alterar o original
 
     if (criterioOrdenacao === 'crescente') {
-        produtosOrdenados.sort((a, b) => a.price - b.price); // Ordena do menor para o maior preço
+        produtosOrdenados.sort((a, b) => a.rating.rate - b.rating.rate); // Ordena do menor para o maior preço
     } else if (criterioOrdenacao === 'decrescente') {
-        produtosOrdenados.sort((a, b) => b.price - a.price); // Ordena do maior para o menor preço
+        produtosOrdenados.sort((a, b) => b.rating.rate - a.rating.rate); // Ordena do maior para o menor preço
     }
 
     artigos_disponiveis.innerHTML = '';
     renderizarProdutos(produtosOrdenados);
+}
+
+function renderizar (data){
+    renderizarMenosInfo(data);
+}
+
+function renderizarMenosInfo(data) {
+    data.forEach(prod => {
+        const e = document.createElement('article');
+        e.setAttribute('class', 'cartao-artigo');
+    
+        const titulo = document.createElement('h3');
+        titulo.textContent = prod.title;
+        e.append(titulo);
+    
+        const imagem = document.createElement('img');
+        imagem.setAttribute('src', `${prod.image}`);
+        imagem.setAttribute('alt', 'Artigo');
+        e.append(imagem);
+    
+        const preco = document.createElement('p');
+        preco.textContent = `Custo total: ${prod.price} €`;
+        e.append(preco);
+
+    
+        const botao = document.createElement('button');
+        botao.setAttribute('id', 'botao-comprar');
+        botao.textContent = '+ Adicionar ao Cesto';
+        botao.addEventListener('click', () => adicionarAoCesto(prod));
+        e.append(botao);
+    
+        artigos_disponiveis.append(e);
+    });
 }
 
 function renderizarProdutos(data) {
@@ -95,6 +131,10 @@ function adicionarAoCesto(prod) {
     localStorage.setItem('cesto', JSON.stringify(cesto));
 
     atualizarCestoUI();
+}
+
+function adicionarTodos() {
+    listaArtigos.forEach(adicionarAoCesto);
 }
 
 function removerDoCesto(index) {
