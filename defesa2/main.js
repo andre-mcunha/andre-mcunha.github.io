@@ -250,7 +250,7 @@ function pedidoCompra () {
        
         pPrecoTotal.textContent = `Valor final a pagar (com eventuais descontos): ${parseFloat(precoFinal).toFixed(2)} €`;       
         pReferencia.textContent = `Referência de pagamento: ${referenciaPagamento}`;
-        addres.textContent = `Morada: ${morada}`;
+        addres.textContent = `${morada}`;
         })
         .catch(error => console.error('Erro ao processar a compra:', error));
 }
