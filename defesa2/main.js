@@ -217,12 +217,14 @@ function pedidoCompra () {
     const produtosIds = cesto.map(prod => prod.id); // Extrai os IDs dos produtos no cesto
     const isEstudante = document.querySelector('input[name="estudante_deisi"]').checked;
     const cupao = document.getElementById('cupao')?.value || '';
+    const localizacao = document.getElementById('address')?.value || '';
 
     //Cosntruir corpo do POST
     const corpoPost = {
         products: produtosIds,
         student: isEstudante,
-        coupon: cupao
+        coupon: cupao,
+        address: localizacao
       };
 
 
