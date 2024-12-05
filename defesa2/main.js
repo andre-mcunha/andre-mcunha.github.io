@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', () => {
 document.getElementById('filtros').addEventListener('change', filtrarProdutos);
 document.getElementById('ordenar').addEventListener('change', ordenarProdutos);
 document.getElementById('botao-adicionartudo').addEventListener('click', adicionarTodos);
-document.getElementById('botao-menosinfo').addEventListener('click', renderizar(listaArtigos));
+document.getElementById('botao-menosinfo').addEventListener('click', renderizar);
 
 
 // Listener para botao de compra
@@ -59,9 +59,19 @@ function ordenarProdutos() {
     renderizarProdutos(produtosOrdenados);
 }
 
-function renderizar (data){
-    renderizarMenosInfo(data);
-}
+function renderizar (){
+    artigos_disponiveis.innerHTML = ""
+
+    fetch(`${API_BASE_URL}/products/`)
+        .then(response => response.json())
+        .then(data => {
+            listaArtigos = data; // Armazena os produtos para reutilizar
+            renderizarMenosInfo(listaArtigos);
+        })
+        .catch(error => console.error('Erro ao carregar produtos:', error));
+
+};
+
 
 function renderizarMenosInfo(data) {
     data.forEach(prod => {
