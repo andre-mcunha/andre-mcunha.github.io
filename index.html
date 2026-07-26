@@ -95,13 +95,13 @@
     position: absolute;
     left: -0.5rem;
     top: 0.28rem;
-    width: 0.85rem;
-    height: 0.85rem;
+    width: 0.55rem;
+    height: 0.55rem;
     border-radius: 9999px;
     background: #fff;
-    border: 2px solid var(--accent);
+    border: 1px solid var(--ink);
   }
-  .timeline-dot.filled{ background: var(--accent); }
+  .timeline-dot.filled{ background: var(--ink); }
 
   /* Blinking "cursor" dot for a role that is currently ongoing —
      one small, deliberate motion detail; respects reduced-motion below. */
@@ -170,7 +170,7 @@
     <span class="hidden sm:inline">Save as PDF</span>
   </button>
 
-  <main class="page mx-auto max-w-4xl px-6 sm:px-8 py-16 sm:py-20">
+  <main class="page mx-auto max-w-4xl px-6 sm:px-8 py-8">
 
     <!-- ============================= HEADER ============================= -->
     <header class="flex flex-row items-center gap-5 sm:gap-7 text-left mb-12">
@@ -183,7 +183,7 @@
       />
  
       <div class="min-w-0">
-        <h1 class="text-2xl sm:text-4xl font-bold tracking-tight">André Cunha</h1>
+        <h1 class="text-2xl sm:text-5xl font-bold tracking-tight">André Cunha</h1>
  
         <!-- Contacts -->
         <div class="mt-3 flex flex-col gap-x-5 gap-y-1.5 font-mono text-xs sm:text-sm text-gray-600">
@@ -192,14 +192,14 @@
             amrcunha1@gmail.com
           </a>
           <!-- Replace the href below with André's actual LinkedIn profile URL -->
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-teal-700 transition-colors">
+          <a href="https://www.linkedin.com/in/andré-mcunha" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-teal-700 transition-colors">
             <i class="fa-brands fa-linkedin w-3.5 text-gray-400"></i>
-            linkedin.com/in/andrecunha
+            linkedin.com/in/andré-mcunha
           </a>
           <!-- Replace the href below with André's actual GitHub profile URL -->
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-teal-700 transition-colors">
+          <a href="https://github.com/andre-mcunha" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-teal-700 transition-colors">
             <i class="fa-brands fa-github w-3.5 text-gray-400"></i>
-            github.com/andrecunha
+            github.com/andre-mcunha
           </a>
         </div>
       </div>
@@ -227,18 +227,30 @@
 
       <div class="pl-[3.25rem] space-y-5">
         <div>
+          <h3 class="text-xs uppercase tracking-wide text-gray-400 mb-2.5">Programming Languages</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">Java</span>
+            <span class="badge">Golang</span>
+            <span class="badge">JavaScript</span>
+            <span class="badge">Python</span>
+            <span class="badge">Flutter</span>
+            <span class="badge">TypeScript</span>
+          </div>
+        </div>
+        <div>
           <h3 class="text-xs uppercase tracking-wide text-gray-400 mb-2.5">Core &amp; Infrastructure / DevOps</h3>
           <div class="flex flex-wrap gap-2">
-            <span class="badge">Linux/UNIX</span>
-            <span class="badge">Docker</span>
+            <span class="badge">REST Api</span>
+            <span class="badge">Tailwind CSS</span>
             <span class="badge">GitHub Actions</span>
-            <span class="badge">CI/CD</span>
-            <span class="badge">Golang</span>
-            <span class="badge">Java</span>
+            <span class="badge">Docker</span>
             <span class="badge">PostgreSQL</span>
             <span class="badge">React</span>
             <span class="badge">Next.js</span>
             <span class="badge">Nginx</span>
+            <span class="badge">Kafka</span>
+            <span class="badge">Terraform</span>
+            <span class="badge">JUnit</span>
           </div>
         </div>
         <div>
@@ -284,7 +296,7 @@
             <h3 class="font-semibold text-[0.98rem]">Member</h3>
             <span class="font-mono text-xs text-gray-400 whitespace-nowrap">Sep 2025 — Jul 2026</span>
           </div>
-          <p class="text-sm text-gray-500 mb-2">NEDI — Informatics Department Student Branch · Lisbon, Portugal</p>
+          <p class="text-sm text-gray-500 mb-2">NEDI - Informatics Department Student Branch · Lisbon, Portugal</p>
           <ul class="text-sm text-gray-700 space-y-1.5 list-disc list-outside ml-4">
             <li>Assisted in organizing and operationalizing major academic events (JobShop, TecWeb, and DeisiFest), bridging the gap between students and the tech job market.</li>
             <li>Collaborated within a multidisciplinary team to manage logistics and ensure the success of community initiatives in Computer Engineering and Information Systems.</li>
@@ -334,7 +346,7 @@
       <div class="pl-[3.25rem]">
         <div class="rounded-xl border border-gray-200 p-5 sm:p-6">
           <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
-            <h3 class="font-semibold text-[0.98rem]">NVOZES — Final Degree Project</h3>
+            <h3 class="font-semibold text-[0.98rem]">NVOZES - Final Degree Project</h3>
             <span class="font-mono text-xs text-gray-400 whitespace-nowrap">Sep 2025 — Jul 2026</span>
           </div>
           <p class="text-sm text-gray-500 mb-3">Full Stack Developer</p>
@@ -348,18 +360,25 @@
 
           <div class="flex flex-wrap gap-2">
             <span class="badge">Golang</span>
-            <span class="badge">PostgreSQL</span>
             <span class="badge">React</span>
             <span class="badge">Next.js</span>
+            <span class="badge">PostgreSQL</span>
+            <span class="badge">REST Api</span>
+            <span class="badge">JavaScript</span>
+            <span class="badge">TypeScript</span>
+            <span class="badge">Tailwind CSS</span>
             <span class="badge">GitHub Actions</span>
             <span class="badge">Docker</span>
             <span class="badge">Nginx</span>
+            <span class="badge">CI/CD</span>
+            
           </div>
         </div>
       </div>
     </section>
 
     <!-- =========================== CERTIFICATIONS =========================== -->
+     <!--
     <section class="mb-4">
       <div class="flex items-center gap-3 mb-6">
         <span><i class="fa-solid fa-certificate"></i></span>
@@ -367,7 +386,7 @@
       </div>
 
       <div class="pl-[3.25rem]">
-        <!--
+        
           No certifications listed yet. Add each new one as a block identical
           to the commented example below (copy it, remove the comment marks,
           and fill in your own details) — it follows the same layout used in
@@ -395,11 +414,12 @@
             <span class="badge">Related Skill</span>
           </div>
         </div>
-        -->
+        
 
         <p class="text-sm text-gray-400 italic">No certifications added yet — see the code comment above for how to add one.</p>
       </div>
     </section>
+    -->
 
     <!-- ====================== EVENTS / CONFERENCES ====================== -->
     <section class="mb-16">
@@ -411,16 +431,16 @@
       <div class="pl-[2.7rem] timeline">
 
         <div class="timeline-item">
-          <span class="timeline-dot"></span>
+          <span class="timeline-dot filled"></span>
           <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <h3 class="font-semibold text-[0.98rem]">IPICS25 — Intensive Programme on Information and Communication Security</h3>
+            <h3 class="font-semibold text-[0.98rem]">IPICS25 - Intensive Programme on Information and Communication Security</h3>
             <span class="font-mono text-xs text-gray-400 whitespace-nowrap">Jul 2025</span>
           </div>
           <p class="text-sm text-gray-500">Participant · Novi Sad, Serbia</p>
         </div>
 
         <div class="timeline-item">
-          <span class="timeline-dot"></span>
+          <span class="timeline-dot filled"></span>
           <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
             <h3 class="font-semibold text-[0.98rem]">JobShop, TecWeb &amp; DeisiFest</h3>
             <span class="font-mono text-xs text-gray-400 whitespace-nowrap">2025 — 2026</span>
