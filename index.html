@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>André Cunha - CV</title>
+<meta name="description" content="André Cunha - Computer Engineering graduate. Backend, DevOps & Cloud Infrastructure." />
+
+<!-- Tailwind CSS (CDN, utility classes for layout/spacing/responsiveness) -->
+<script src="https://cdn.tailwindcss.com"></script>
+
+<!-- Font Awesome (CDN, icons before section titles / contact row) -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+
+<!-- Google Fonts: Space Grotesk (display/headings), Inter (body copy), JetBrains Mono (labels, dates, tags) -->
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+
+<style>
+  :root{
+    --bg:        #ffffff;
+    --bg-alt:    #f9fafb;
+    --ink:       #111827;
+    --ink-soft:  #6b7280;
+    --line:      #e5e7eb;
+    --accent:    #0f766e;   /* teal-700 */
+    --accent-soft: #ccfbf1; /* teal-100 */
+    --accent-bg: #f0fdfa;   /* teal-50  */
+
+    --font-display: 'Space Grotesk', sans-serif;
+    --font-body: 'Inter', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+  }
+
+  *{ box-sizing: border-box; }
+
+  body{
+    background: var(--bg);
+    color: var(--ink);
+    font-family: var(--font-body);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3, .font-display{ font-family: var(--font-display); }
+  .font-mono{ font-family: var(--font-mono); }
+
+  /* Section icon chip */
+  .icon-chip{
+    width: 2.1rem;
+    height: 2.1rem;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9999px;
+    background: var(--accent-bg);
+    color: var(--ink);
+    border: 1px solid var(--ink);
+    font-size: 0.85rem;
+    flex-shrink: 0;
+  }
+
+  /* Skill badges: thin-outline pills, monospace, matches the reference style */
+  .badge{
+    display: inline-flex;
+    align-items: center;
+    padding: 0.32rem 0.8rem;
+    border-radius: 9999px;
+    border: 1px solid var(--line);
+    font-family: var(--font-mono);
+    font-size: 0.78rem;
+    color: var(--ink);
+    background: #fff;
+    transition: border-color .15s ease, color .15s ease, background-color .15s ease;
+  }
+  .badge:hover{
+    border-color: var(--accent);
+    color: var(--accent);
+    background: var(--accent-bg);
+  }
+
+  /* Vertical timeline (Experience / Education) */
+  .timeline{
+    position: relative;
+    border-left: 2px solid var(--line);
+    margin-left: 0.55rem;
+  }
+  .timeline-item{
+    position: relative;
+    padding-left: 1.75rem;
+    padding-bottom: 2.1rem;
+  }
+  .timeline-item:last-child{ padding-bottom: 0; }
+  .timeline-dot{
+    position: absolute;
+    left: -0.5rem;
+    top: 0.28rem;
+    width: 0.85rem;
+    height: 0.85rem;
+    border-radius: 9999px;
+    background: #fff;
+    border: 2px solid var(--accent);
+  }
+  .timeline-dot.filled{ background: var(--accent); }
+
+  /* Blinking "cursor" dot for a role that is currently ongoing —
+     one small, deliberate motion detail; respects reduced-motion below. */
+  .live-dot{
+    display: inline-block;
+    width: 0.4rem;
+    height: 0.4rem;
+    border-radius: 9999px;
+    background: var(--accent);
+    margin-right: 0.4rem;
+    animation: pulse 1.8s ease-in-out infinite;
+  }
+  @keyframes pulse{
+    0%, 100%{ opacity: 1; }
+    50%{ opacity: 0.25; }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .live-dot{ animation: none; }
+  }
+
+  .page{
+    background: var(--bg);
+    margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-radius: 4px;
+    box-shadow:
+      0 1px 2px rgba(0,0,0,0.06),
+      0 20px 40px -16px rgba(0,0,0,0.18);
+  }
+
+  /* Visible keyboard focus (accessibility floor) */
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  /* -------------------- PRINT / SAVE AS PDF -------------------- */
+  @media print{
+    @page{ margin: 14mm; }
+    body{ background: #fff; }
+    .no-print{ display: none !important; }
+    .timeline{ border-left-color: #d1d5db; }
+    .page{
+        margin: 0;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    a{ color: var(--ink) !important; text-decoration: none !important; }
+    .badge{ break-inside: avoid; }
+    .timeline-item{ break-inside: avoid; }
+    section{ break-inside: avoid-page; }
+  }
+</style>
+</head>
+
+<body class="min-h-screen bg-[#e9ebee]">
+
+  <!-- Print / Save as PDF button — hidden automatically when printing -->
+  <button
+    onclick="window.print()"
+    class="no-print fixed top-4 right-4 sm:top-6 sm:right-6 z-50 flex items-center gap-2 rounded-full border border-gray-200 bg-white/90 backdrop-blur px-4 py-2 text-xs font-medium text-gray-600 shadow-sm hover:border-teal-600 hover:text-teal-700 transition-colors"
+    aria-label="Print or save this page as PDF"
+  >
+    <i class="fa-solid fa-print"></i>
+    <span class="hidden sm:inline">Save as PDF</span>
+  </button>
+
+  <main class="page mx-auto max-w-4xl px-6 sm:px-8 py-16 sm:py-20">
+
+    <!-- ============================= HEADER ============================= -->
+    <header class="flex flex-row items-center gap-5 sm:gap-7 text-left mb-12">
+      <img
+        src="profile.jpg"
+        alt="André Cunha"
+        width="160"
+        height="160"
+        class="w-28 h-28 sm:w-44 sm:h-44 rounded-full object-cover border border-gray-200 shadow-sm flex-shrink-0"
+      />
+ 
+      <div class="min-w-0">
+        <h1 class="text-2xl sm:text-4xl font-bold tracking-tight">André Cunha</h1>
+ 
+        <!-- Contacts -->
+        <div class="mt-3 flex flex-col gap-x-5 gap-y-1.5 font-mono text-xs sm:text-sm text-gray-600">
+          <a href="mailto:amrcunha1@gmail.com" class="flex items-center gap-1.5 hover:text-teal-700 transition-colors">
+            <i class="fa-solid fa-envelope w-3.5 text-gray-400"></i>
+            amrcunha1@gmail.com
+          </a>
+          <!-- Replace the href below with André's actual LinkedIn profile URL -->
+          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-teal-700 transition-colors">
+            <i class="fa-brands fa-linkedin w-3.5 text-gray-400"></i>
+            linkedin.com/in/andrecunha
+          </a>
+          <!-- Replace the href below with André's actual GitHub profile URL -->
+          <a href="https://github.com" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-teal-700 transition-colors">
+            <i class="fa-brands fa-github w-3.5 text-gray-400"></i>
+            github.com/andrecunha
+          </a>
+        </div>
+      </div>
+    </header>
+    <!-- ============================= SUMMARY ============================= -->
+    <section class="mb-4">
+      <div class="flex items-start gap-3">
+        <p class=" text-[0.95rem] leading-relaxed text-gray-700">
+          Recent Computer Engineering graduate with a learning oriented mindset and a strong focus on impact.
+          Strong understanding of the full software development lifecycle, with hands-on experience in backend
+          architecture, containerization (Docker), CI/CD pipelines, and a strong interest in Telecom software and
+          cloud infrastructure. The combination of solid technical development skills with years of experience in
+          client management and logistics planning provides a holistic perspective, high adaptability to fast-paced
+          changes, and a strong commitment to results and collaborative teamwork.
+        </p>
+      </div>
+    </section>
+
+    <!-- ============================= SKILLS ============================= -->
+    <section class="mb-4">
+      <div class="flex items-center gap-3 mb-5">
+        <span><i class="fa-solid fa-code"></i></span>
+        <h2 class="text-xl font-semibold">Skills</h2>
+      </div>
+
+      <div class="pl-[3.25rem] space-y-5">
+        <div>
+          <h3 class="text-xs uppercase tracking-wide text-gray-400 mb-2.5">Core &amp; Infrastructure / DevOps</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">Linux/UNIX</span>
+            <span class="badge">Docker</span>
+            <span class="badge">GitHub Actions</span>
+            <span class="badge">CI/CD</span>
+            <span class="badge">Golang</span>
+            <span class="badge">Java</span>
+            <span class="badge">PostgreSQL</span>
+            <span class="badge">React</span>
+            <span class="badge">Next.js</span>
+            <span class="badge">Nginx</span>
+          </div>
+        </div>
+        <div>
+          <h3 class="text-xs uppercase tracking-wide text-gray-400 mb-2.5">Soft Skills</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">Teamwork</span>
+            <span class="badge">Communication</span>
+            <span class="badge">Problem Solving</span>
+            <span class="badge">Adaptability</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================= WORK EXPERIENCE ========================= -->
+    <section class="mb-4">
+      <div class="flex items-center gap-3 mb-6">
+        <span><i class="fa-solid fa-briefcase"></i></span>
+        <h2 class="text-xl font-semibold">Work Experience</h2>
+      </div>
+
+      <div class="pl-[2.7rem] timeline">
+
+        <div class="timeline-item">
+          <span class="timeline-dot filled"></span>
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <h3 class="font-semibold text-[0.98rem]">Fitness Instructor</h3>
+            <span class="font-mono text-xs text-gray-400 whitespace-nowrap">
+              <span class="live-dot" title="Ongoing"></span>2020 — Present
+            </span>
+          </div>
+          <p class="text-sm text-gray-500 mb-2">Clube de Carnaxide Cultura e Desporto · Lisbon, Portugal</p>
+          <ul class="text-sm text-gray-700 space-y-1.5 list-disc list-outside ml-4">
+            <li>Managed fitness floor operations directly and autonomously, tailoring training programs for hundreds of clients based on their physiological needs.</li>
+            <li>Applied communication and motivation strategies to maximize client retention and satisfaction.</li>
+            <li>Fostered a collaborative environment, developing informal leadership and teamwork skills.</li>
+          </ul>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-dot filled"></span>
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <h3 class="font-semibold text-[0.98rem]">Member</h3>
+            <span class="font-mono text-xs text-gray-400 whitespace-nowrap">Sep 2025 — Jul 2026</span>
+          </div>
+          <p class="text-sm text-gray-500 mb-2">NEDI — Informatics Department Student Branch · Lisbon, Portugal</p>
+          <ul class="text-sm text-gray-700 space-y-1.5 list-disc list-outside ml-4">
+            <li>Assisted in organizing and operationalizing major academic events (JobShop, TecWeb, and DeisiFest), bridging the gap between students and the tech job market.</li>
+            <li>Collaborated within a multidisciplinary team to manage logistics and ensure the success of community initiatives in Computer Engineering and Information Systems.</li>
+          </ul>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================= EDUCATION ============================= -->
+    <section class="mb-4">
+      <div class="flex items-center gap-3 mb-6">
+        <span><i class="fa-solid fa-graduation-cap"></i></span>
+        <h2 class="text-xl font-semibold">Education</h2>
+      </div>
+
+      <div class="pl-[2.7rem] timeline">
+
+        <div class="timeline-item">
+          <span class="timeline-dot filled"></span>
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <h3 class="font-semibold text-[0.98rem]">BSc in Computer Engineering</h3>
+            <span class="font-mono text-xs text-gray-400 whitespace-nowrap">Sep 2023 — Jul 2026</span>
+          </div>
+          <p class="text-sm text-gray-500">Universidade Lusófona de Lisboa · Lisbon, Portugal</p>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-dot filled"></span>
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <h3 class="font-semibold text-[0.98rem]">IPICS25 — Intensive Programme on Information and Communication Security</h3>
+            <span class="font-mono text-xs text-gray-400 whitespace-nowrap">Jul 2025</span>
+          </div>
+          <p class="text-sm text-gray-500">CyberSecPro · Novi Sad, Serbia</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================= PROJECTS ============================= -->
+    <section class="mb-4">
+      <div class="flex items-center gap-3 mb-6">
+        <span><i class="fa-solid fa-diagram-project"></i></span>
+        <h2 class="text-xl font-semibold">Projects</h2>
+      </div>
+
+      <div class="pl-[3.25rem]">
+        <div class="rounded-xl border border-gray-200 p-5 sm:p-6">
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
+            <h3 class="font-semibold text-[0.98rem]">NVOZES — Final Degree Project</h3>
+            <span class="font-mono text-xs text-gray-400 whitespace-nowrap">Sep 2025 — Jul 2026</span>
+          </div>
+          <p class="text-sm text-gray-500 mb-3">Full Stack Developer</p>
+
+          <ul class="text-sm text-gray-700 space-y-1.5 list-disc list-outside ml-4 mb-4">
+            <li>Planned, architected, and fully developed an end-to-end digital platform designed to connect young entrepreneurs from CPLP countries with partner and investor networks.</li>
+            <li>Developed a backend REST API using Golang and PostgreSQL.</li>
+            <li>Created two independent, responsive frontends (an institutional portal and an authenticated user dashboard) using React and Next.js.</li>
+            <li>Implemented automated CI/CD pipelines via GitHub Actions and fully containerized the infrastructure using Docker and Nginx.</li>
+          </ul>
+
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">Golang</span>
+            <span class="badge">PostgreSQL</span>
+            <span class="badge">React</span>
+            <span class="badge">Next.js</span>
+            <span class="badge">GitHub Actions</span>
+            <span class="badge">Docker</span>
+            <span class="badge">Nginx</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =========================== CERTIFICATIONS =========================== -->
+    <section class="mb-4">
+      <div class="flex items-center gap-3 mb-6">
+        <span><i class="fa-solid fa-certificate"></i></span>
+        <h2 class="text-xl font-semibold">Certifications</h2>
+      </div>
+
+      <div class="pl-[3.25rem]">
+        <!--
+          No certifications listed yet. Add each new one as a block identical
+          to the commented example below (copy it, remove the comment marks,
+          and fill in your own details) — it follows the same layout used in
+          the Projects section above.
+
+        <div class="rounded-xl border border-gray-200 p-5 sm:p-6 mb-4">
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
+            <h3 class="font-semibold text-[0.98rem]">Certification Name</h3>
+            <span class="font-mono text-xs text-gray-400 whitespace-nowrap">Month Year</span>
+          </div>
+          <p class="text-sm text-gray-500 mb-3">Issuing Organization</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">Related Skill</span>
+            <span class="badge">Related Skill</span>
+          </div>
+        </div>
+
+        <div class="rounded-xl border border-gray-200 p-5 sm:p-6">
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
+            <h3 class="font-semibold text-[0.98rem]">Another Certification</h3>
+            <span class="font-mono text-xs text-gray-400 whitespace-nowrap">Month Year</span>
+          </div>
+          <p class="text-sm text-gray-500 mb-3">Issuing Organization</p>
+          <div class="flex flex-wrap gap-2">
+            <span class="badge">Related Skill</span>
+          </div>
+        </div>
+        -->
+
+        <p class="text-sm text-gray-400 italic">No certifications added yet — see the code comment above for how to add one.</p>
+      </div>
+    </section>
+
+    <!-- ====================== EVENTS / CONFERENCES ====================== -->
+    <section class="mb-16">
+      <div class="flex items-center gap-3 mb-6">
+        <span><i class="fa-solid fa-calendar-days"></i></span>
+        <h2 class="text-xl font-semibold">Events &amp; Conferences</h2>
+      </div>
+
+      <div class="pl-[2.7rem] timeline">
+
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <h3 class="font-semibold text-[0.98rem]">IPICS25 — Intensive Programme on Information and Communication Security</h3>
+            <span class="font-mono text-xs text-gray-400 whitespace-nowrap">Jul 2025</span>
+          </div>
+          <p class="text-sm text-gray-500">Participant · Novi Sad, Serbia</p>
+        </div>
+
+        <div class="timeline-item">
+          <span class="timeline-dot"></span>
+          <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
+            <h3 class="font-semibold text-[0.98rem]">JobShop, TecWeb &amp; DeisiFest</h3>
+            <span class="font-mono text-xs text-gray-400 whitespace-nowrap">2025 — 2026</span>
+          </div>
+          <p class="text-sm text-gray-500">Organizer / Operational Team · Universidade Lusófona</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============================= FOOTER ============================= -->
+    <footer class="pt-8 border-t border-gray-100 text-center">
+      <p class="font-mono text-xs text-gray-400">
+        André Cunha · <a href="mailto:amrcunha1@gmail.com" class="hover:text-teal-700">amrcunha1@gmail.com</a> · Lisbon, Portugal
+      </p>
+    </footer>
+
+  </main>
+
+</body>
+</html>
