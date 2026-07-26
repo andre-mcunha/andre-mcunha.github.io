@@ -6,7 +6,15 @@
 <title>André Cunha - CV</title>
 <meta name="description" content="André Cunha - Computer Engineering graduate. Backend, DevOps & Cloud Infrastructure." />
 
-<!-- Tailwind CSS (CDN, utility classes for layout/spacing/responsiveness) -->
+<meta property="og:title" content="André Cunha — Backend Engineer, Cloud & DevOps" />
+<meta property="og:description" content="Computer Engineering graduate specializing in backend development, cloud-native systems, and software integration." />
+<meta property="og:image" content="profile.jpg" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://andre-mcunha.github.io/" />
+
+<!-- Favicon placeholder (a simple teal "A" square) — swap for a real favicon.ico/png if you have one -->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%230f766e'/%3E%3Ctext x='50' y='68' font-size='55' font-family='sans-serif' font-weight='700' fill='white' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E" />
+
 <script src="https://cdn.tailwindcss.com"></script>
 
 <!-- Font Awesome (CDN, icons before section titles / contact row) -->
@@ -45,21 +53,6 @@
   h1, h2, h3, .font-display{ font-family: var(--font-display); }
   .font-mono{ font-family: var(--font-mono); }
 
-  /* Section icon chip */
-  .icon-chip{
-    width: 2.1rem;
-    height: 2.1rem;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 9999px;
-    background: var(--accent-bg);
-    color: var(--ink);
-    border: 1px solid var(--ink);
-    font-size: 0.85rem;
-    flex-shrink: 0;
-  }
-
   /* Skill badges: thin-outline pills, monospace, matches the reference style */
   .badge{
     display: inline-flex;
@@ -79,7 +72,8 @@
     background: var(--accent-bg);
   }
 
-  /* Vertical timeline (Experience / Education) */
+  /* Vertical timeline — used ONLY by Work Experience now (with logo markers).
+     Education and Events use a plain stacked list instead. */
   .timeline{
     position: relative;
     border-left: 2px solid var(--line);
@@ -91,17 +85,31 @@
     padding-bottom: 2.1rem;
   }
   .timeline-item:last-child{ padding-bottom: 0; }
-  .timeline-dot{
+
+  /* Square logo marker — sits centered directly on top of the vertical
+     line, holding a company/institution logo. */
+  .timeline--logos .timeline-item{ padding-left: 2.6rem; }
+  .timeline-logo{
     position: absolute;
-    left: -0.5rem;
-    top: 0.28rem;
-    width: 0.55rem;
-    height: 0.55rem;
-    border-radius: 9999px;
+    left: -0.95rem;   /* -(width/2): centers the marker exactly on the timeline's line */
+    top: 0;
+    width: 1.9rem;
+    height: 1.9rem;
+    border-radius: 0.4rem;
     background: #fff;
-    border: 1px solid var(--ink);
+    border: 1px solid var(--line);
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    z-index: 1;
   }
-  .timeline-dot.filled{ background: var(--ink); }
+  .timeline-logo img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
 
   /* Blinking "cursor" dot for a role that is currently ongoing —
      one small, deliberate motion detail; respects reduced-motion below. */
@@ -177,21 +185,23 @@
       <img
         src="profile.jpg"
         alt="André Cunha"
-        width="160"
-        height="160"
-        class="w-28 h-28 sm:w-44 sm:h-44 rounded-full object-cover border border-gray-200 shadow-sm flex-shrink-0"
+        width="128"
+        height="128"
+        class="w-24 h-24 sm:w-32 sm:h-32 rounded-full object-cover border border-gray-200 shadow-sm flex-shrink-0"
       />
- 
+
       <div class="min-w-0">
-        <h1 class="text-2xl sm:text-5xl font-bold tracking-tight">André Cunha</h1>
- 
+        <h1 class="text-2xl sm:text-4xl font-bold tracking-tight">André Cunha</h1>
+        <p class="mt-1 text-sm sm:text-base font-medium text-gray-600">Backend Engineer · Cloud &amp; DevOps</p>
+        <p class="mt-1 text-xs font-mono text-teal-700">Open to Backend / Full Stack / DevOps / Cloud Roles</p>
+
         <!-- Contacts -->
         <div class="mt-3 flex flex-col gap-x-5 gap-y-1.5 font-mono text-xs sm:text-sm text-gray-600">
           <a href="mailto:amrcunha1@gmail.com" class="flex items-center gap-1.5 hover:text-teal-700 transition-colors">
             <i class="fa-solid fa-envelope w-3.5 text-gray-400"></i>
             amrcunha1@gmail.com
           </a>
-          <!-- Replace the href below with André's actual LinkedIn profile URL -->
+
           <a href="https://www.linkedin.com/in/andré-mcunha" target="_blank" rel="noopener noreferrer" class="flex items-center gap-1.5 hover:text-teal-700 transition-colors">
             <i class="fa-brands fa-linkedin w-3.5 text-gray-400"></i>
             linkedin.com/in/andré-mcunha
@@ -208,12 +218,13 @@
     <section class="mb-4">
       <div class="flex items-start gap-3">
         <p class=" text-[0.95rem] leading-relaxed text-gray-700">
-          Recent Computer Engineering graduate with a learning oriented mindset and a strong focus on impact.
-          Strong understanding of the full software development lifecycle, with hands-on experience in backend
-          architecture, containerization (Docker), CI/CD pipelines, and a strong interest in Telecom software and
-          cloud infrastructure. The combination of solid technical development skills with years of experience in
-          client management and logistics planning provides a holistic perspective, high adaptability to fast-paced
-          changes, and a strong commitment to results and collaborative teamwork.
+          Computer Engineering graduate with hands-on full-stack experience, 
+          building backend REST APIs in Golang and Java, relational databases, and React/Next.js frontends, demonstrated by architecting 
+          and shipping NVOZES, an end-to-end platform, from scratch.
+          Particularly drawn to backend engineering and DevOps, containerizing services with Docker, 
+          automating deployments via GitHub Actions, and adopting Infrastructure as Code with Terraform. 
+          Currently expanding into MLOps and LLM integration, eager to apply all these skills in an internship or junior role. 
+          Highly motivated by continuous learning, comfortable digging into unfamiliar tools, and driven to solve complex engineering problems.
         </p>
       </div>
     </section>
@@ -225,22 +236,22 @@
         <h2 class="text-xl font-semibold">Skills</h2>
       </div>
 
-      <div class="pl-[3.25rem] space-y-5">
+      <div class="pl-[2.7rem] space-y-5">
         <div>
-          <h3 class="text-xs uppercase tracking-wide text-gray-400 mb-2.5">Programming Languages</h3>
+          <h3 class="text-xs uppercase tracking-wide text-gray-500 mb-2.5">Programming Languages</h3>
           <div class="flex flex-wrap gap-2">
             <span class="badge">Java</span>
             <span class="badge">Golang</span>
             <span class="badge">JavaScript</span>
             <span class="badge">Python</span>
-            <span class="badge">Flutter</span>
             <span class="badge">TypeScript</span>
           </div>
         </div>
         <div>
-          <h3 class="text-xs uppercase tracking-wide text-gray-400 mb-2.5">Core &amp; Infrastructure / DevOps</h3>
+          <h3 class="text-xs uppercase tracking-wide text-gray-500 mb-2.5">Other Technical Skills</h3>
           <div class="flex flex-wrap gap-2">
-            <span class="badge">REST Api</span>
+            <span class="badge">REST API</span>
+            <span class="badge">Flutter</span>
             <span class="badge">Tailwind CSS</span>
             <span class="badge">GitHub Actions</span>
             <span class="badge">Docker</span>
@@ -254,12 +265,13 @@
           </div>
         </div>
         <div>
-          <h3 class="text-xs uppercase tracking-wide text-gray-400 mb-2.5">Soft Skills</h3>
+          <h3 class="text-xs uppercase tracking-wide text-gray-500 mb-2.5">Soft Skills</h3>
           <div class="flex flex-wrap gap-2">
             <span class="badge">Teamwork</span>
             <span class="badge">Communication</span>
             <span class="badge">Problem Solving</span>
             <span class="badge">Adaptability</span>
+            <span class="badge">Eager to Learn</span>
           </div>
         </div>
       </div>
@@ -272,29 +284,36 @@
         <h2 class="text-xl font-semibold">Work Experience</h2>
       </div>
 
-      <div class="pl-[2.7rem] timeline">
+        <div class="timeline timeline--logos">
 
         <div class="timeline-item">
-          <span class="timeline-dot filled"></span>
+          <span class="timeline-logo">
+            <img src="cccd_logo.jpg" 
+            alt="Clube de Carnaxide logo" 
+            onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Crect width=%2724%27 height=%2724%27 fill=%27%23e5e7eb%27/%3E%3C/svg%3E'" />
+          </span>
           <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
             <h3 class="font-semibold text-[0.98rem]">Fitness Instructor</h3>
-            <span class="font-mono text-xs text-gray-400 whitespace-nowrap">
+            <span class="font-mono text-xs text-gray-500 whitespace-nowrap">
               <span class="live-dot" title="Ongoing"></span>2020 — Present
             </span>
           </div>
           <p class="text-sm text-gray-500 mb-2">Clube de Carnaxide Cultura e Desporto · Lisbon, Portugal</p>
           <ul class="text-sm text-gray-700 space-y-1.5 list-disc list-outside ml-4">
-            <li>Managed fitness floor operations directly and autonomously, tailoring training programs for hundreds of clients based on their physiological needs.</li>
-            <li>Applied communication and motivation strategies to maximize client retention and satisfaction.</li>
-            <li>Fostered a collaborative environment, developing informal leadership and teamwork skills.</li>
+            <li>Managed fitness floor operations autonomously, tailoring training programs for hundreds of clients.</li>
+            <li>Built strong client relationships through communication and motivation strategies, developing informal leadership skills along the way.</li>
           </ul>
         </div>
 
         <div class="timeline-item">
-          <span class="timeline-dot filled"></span>
+          <span class="timeline-logo">
+            <img src="logo_nedi.png" 
+            alt="NEDI logo" 
+            onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Crect width=%2724%27 height=%2724%27 fill=%27%23e5e7eb%27/%3E%3C/svg%3E'" />
+          </span>
           <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
             <h3 class="font-semibold text-[0.98rem]">Member</h3>
-            <span class="font-mono text-xs text-gray-400 whitespace-nowrap">Sep 2025 — Jul 2026</span>
+            <span class="font-mono text-xs text-gray-500 whitespace-nowrap">Sep 2025 — Jul 2026</span>
           </div>
           <p class="text-sm text-gray-500 mb-2">NEDI - Informatics Department Student Branch · Lisbon, Portugal</p>
           <ul class="text-sm text-gray-700 space-y-1.5 list-disc list-outside ml-4">
@@ -313,26 +332,22 @@
         <h2 class="text-xl font-semibold">Education</h2>
       </div>
 
-      <div class="pl-[2.7rem] timeline">
-
-        <div class="timeline-item">
-          <span class="timeline-dot filled"></span>
+      <div class="pl-[2.7rem] space-y-5">
+        <div>
           <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
             <h3 class="font-semibold text-[0.98rem]">BSc in Computer Engineering</h3>
-            <span class="font-mono text-xs text-gray-400 whitespace-nowrap">Sep 2023 — Jul 2026</span>
+            <span class="font-mono text-xs text-gray-500 whitespace-nowrap">Sep 2023 — Jul 2026</span>
           </div>
           <p class="text-sm text-gray-500">Universidade Lusófona de Lisboa · Lisbon, Portugal</p>
         </div>
 
-        <div class="timeline-item">
-          <span class="timeline-dot filled"></span>
+        <div>
           <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
             <h3 class="font-semibold text-[0.98rem]">IPICS25 — Intensive Programme on Information and Communication Security</h3>
-            <span class="font-mono text-xs text-gray-400 whitespace-nowrap">Jul 2025</span>
+            <span class="font-mono text-xs text-gray-500 whitespace-nowrap">Jul 2025</span>
           </div>
           <p class="text-sm text-gray-500">CyberSecPro · Novi Sad, Serbia</p>
         </div>
-
       </div>
     </section>
 
@@ -343,13 +358,13 @@
         <h2 class="text-xl font-semibold">Projects</h2>
       </div>
 
-      <div class="pl-[3.25rem]">
+      <div class="pl-[2.7rem]">
         <div class="rounded-xl border border-gray-200 p-5 sm:p-6">
           <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
             <h3 class="font-semibold text-[0.98rem]">NVOZES - Final Degree Project</h3>
-            <span class="font-mono text-xs text-gray-400 whitespace-nowrap">Sep 2025 — Jul 2026</span>
+            <span class="font-mono text-xs text-gray-500 whitespace-nowrap">Sep 2025 — Jul 2026</span>
           </div>
-          <p class="text-sm text-gray-500 mb-3">Full Stack Developer</p>
+          <p class="text-sm text-gray-500 mb-2">Full Stack Developer</p>
 
           <ul class="text-sm text-gray-700 space-y-1.5 list-disc list-outside ml-4 mb-4">
             <li>Planned, architected, and fully developed an end-to-end digital platform designed to connect young entrepreneurs from CPLP countries with partner and investor networks.</li>
@@ -363,7 +378,7 @@
             <span class="badge">React</span>
             <span class="badge">Next.js</span>
             <span class="badge">PostgreSQL</span>
-            <span class="badge">REST Api</span>
+            <span class="badge">REST API</span>
             <span class="badge">JavaScript</span>
             <span class="badge">TypeScript</span>
             <span class="badge">Tailwind CSS</span>
@@ -371,6 +386,7 @@
             <span class="badge">Docker</span>
             <span class="badge">Nginx</span>
             <span class="badge">CI/CD</span>
+            <span class="badge">Certbot</span>
             
           </div>
         </div>
@@ -395,7 +411,7 @@
         <div class="rounded-xl border border-gray-200 p-5 sm:p-6 mb-4">
           <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
             <h3 class="font-semibold text-[0.98rem]">Certification Name</h3>
-            <span class="font-mono text-xs text-gray-400 whitespace-nowrap">Month Year</span>
+            <span class="font-mono text-xs text-gray-500 whitespace-nowrap">Month Year</span>
           </div>
           <p class="text-sm text-gray-500 mb-3">Issuing Organization</p>
           <div class="flex flex-wrap gap-2">
@@ -407,7 +423,7 @@
         <div class="rounded-xl border border-gray-200 p-5 sm:p-6">
           <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
             <h3 class="font-semibold text-[0.98rem]">Another Certification</h3>
-            <span class="font-mono text-xs text-gray-400 whitespace-nowrap">Month Year</span>
+            <span class="font-mono text-xs text-gray-500 whitespace-nowrap">Month Year</span>
           </div>
           <p class="text-sm text-gray-500 mb-3">Issuing Organization</p>
           <div class="flex flex-wrap gap-2">
@@ -425,35 +441,23 @@
     <section class="mb-16">
       <div class="flex items-center gap-3 mb-6">
         <span><i class="fa-solid fa-calendar-days"></i></span>
-        <h2 class="text-xl font-semibold">Events &amp; Conferences</h2>
+        <h2 class="text-xl font-semibold">Events and Conferences</h2>
       </div>
 
-      <div class="pl-[2.7rem] timeline">
-
-        <div class="timeline-item">
-          <span class="timeline-dot filled"></span>
+      <div class="pl-[2.7rem] space-y-5">
+        <div>
           <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <h3 class="font-semibold text-[0.98rem]">IPICS25 - Intensive Programme on Information and Communication Security</h3>
-            <span class="font-mono text-xs text-gray-400 whitespace-nowrap">Jul 2025</span>
+            <h3 class="font-semibold text-[0.98rem]">Bridging young talent with the future of Banking and IT - Seminar</h3>
+            <span class="font-mono text-xs text-gray-500 whitespace-nowrap">May 2026</span>
           </div>
-          <p class="text-sm text-gray-500">Participant · Novi Sad, Serbia</p>
+          <p class="text-sm text-gray-500">Speaker · Participant · Universidade Lusófona, Lisbon, Portugal</p>
         </div>
-
-        <div class="timeline-item">
-          <span class="timeline-dot filled"></span>
-          <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <h3 class="font-semibold text-[0.98rem]">JobShop, TecWeb &amp; DeisiFest</h3>
-            <span class="font-mono text-xs text-gray-400 whitespace-nowrap">2025 — 2026</span>
-          </div>
-          <p class="text-sm text-gray-500">Organizer / Operational Team · Universidade Lusófona</p>
-        </div>
-
       </div>
     </section>
 
     <!-- ============================= FOOTER ============================= -->
     <footer class="pt-8 border-t border-gray-100 text-center">
-      <p class="font-mono text-xs text-gray-400">
+      <p class="font-mono text-xs text-gray-500">
         André Cunha · <a href="mailto:amrcunha1@gmail.com" class="hover:text-teal-700">amrcunha1@gmail.com</a> · Lisbon, Portugal
       </p>
     </footer>
