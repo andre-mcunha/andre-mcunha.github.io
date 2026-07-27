@@ -6,7 +6,7 @@
 <title>André Cunha - CV</title>
 <meta name="description" content="André Cunha - Computer Engineering graduate. Backend, DevOps & Cloud Infrastructure." />
 
-<meta property="og:title" content="André Cunha — Backend Engineer, Cloud & DevOps" />
+<meta property="og:title" content="André Cunha - Backend Engineer, Cloud & DevOps" />
 <meta property="og:description" content="Computer Engineering graduate specializing in backend development, cloud-native systems, and software integration." />
 <meta property="og:image" content="profile.jpg" />
 <meta property="og:type" content="website" />
@@ -69,7 +69,7 @@
     background: var(--accent-bg);
   }
 
-  /* Vertical timeline — used ONLY by Work Experience now (with logo markers).
+  /* Vertical timeline - used ONLY by Work Experience now (with logo markers).
      Education and Events use a plain stacked list instead. */
   .timeline{
     position: relative;
@@ -83,7 +83,7 @@
   }
   .timeline-item:last-child{ padding-bottom: 0; }
 
-  /* Square logo marker — sits centered directly on top of the vertical
+  /* Square logo marker - sits centered directly on top of the vertical
      line, holding a company/institution logo. */
   .timeline--logos .timeline-item{ padding-left: 2.6rem; }
   .timeline-logo{
@@ -108,7 +108,7 @@
     object-fit: cover;
   }
 
-  /* Blinking "cursor" dot for a role that is currently ongoing —
+  /* Blinking "cursor" dot for a role that is currently ongoing -
      one small, deliberate motion detail; respects reduced-motion below. */
   .live-dot{
     display: inline-block;
@@ -165,14 +165,26 @@
 
 <body class="min-h-screen bg-[#eef4f4]">
 
-  <!-- Print / Save as PDF button — hidden automatically when printing -->
+  <!-- Language toggle - hidden when printing -->
+  <button
+    id="langToggle"
+    type="button"
+    class="no-print fixed top-4 left-4 sm:top-6 sm:left-6 z-50 flex items-center gap-2 rounded-full border border-gray-200 bg-white/90 backdrop-blur px-4 py-2 text-xs font-medium text-gray-600 shadow-sm hover:border-teal-600 hover:text-teal-700 transition-colors"
+    aria-label="Ver versão em português"
+  >
+    <i class="fa-solid fa-globe"></i>
+    <span id="langToggleLabel" class="font-mono">PT</span>
+  </button>
+
+  <!-- Print / Save as PDF button - hidden automatically when printing -->
   <button
     onclick="window.print()"
     class="no-print fixed top-4 right-4 sm:top-6 sm:right-6 z-50 flex items-center gap-2 rounded-full border border-gray-200 bg-white/90 backdrop-blur px-4 py-2 text-xs font-medium text-gray-600 shadow-sm hover:border-teal-600 hover:text-teal-700 transition-colors"
     aria-label="Print or save this page as PDF"
+    data-pt-aria="Imprimir ou guardar esta página como PDF"
   >
     <i class="fa-solid fa-print"></i>
-    <span class="hidden sm:inline">Save as PDF</span>
+    <span class="hidden sm:inline" data-pt="Guardar como PDF">Save as PDF</span>
   </button>
 
   <main class="page mx-auto max-w-4xl px-6 sm:px-8 py-8">
@@ -189,8 +201,8 @@
 
       <div class="min-w-0">
         <h1 class="text-2xl sm:text-4xl font-bold tracking-tight">André Cunha</h1>
-        <p class="mt-1 text-sm sm:text-base font-medium text-gray-600">Full Stack Developer</p>
-        <p class="mt-1 text-xs font-mono text-teal-700">Open to Backend / Full Stack / DevOps / Cloud Roles</p>
+        <p class="mt-1 text-sm sm:text-base font-medium text-gray-600" data-pt="Desenvolvedor Full Stack">Full Stack Developer</p>
+        <p class="mt-1 text-xs font-mono text-teal-700" data-pt="Disponível para Backend / Full Stack / DevOps / Cloud">Open to Backend / Full Stack / DevOps / Cloud Roles</p>
 
         <!-- Contacts -->
         <div class="mt-3 flex flex-col gap-x-5 gap-y-1.5 font-mono text-xs sm:text-sm text-gray-600">
@@ -214,7 +226,12 @@
     <!-- ============================= SUMMARY ============================= -->
     <section class="mb-4">
       <div class="flex items-start gap-3">
-        <p class=" text-[0.95rem] leading-relaxed text-gray-700">
+        <p class=" text-[0.95rem] leading-relaxed text-gray-700" data-pt="Licenciado em Engenharia Informática com experiência prática em 
+        desenvolvimento full-stack. Tenho experiência na criação de APIs REST em Golang e Java, gestão de bases de dados relacionais e frontends em 
+        React/Next.js, competências consolidadas na arquitetura e desenvolvimento de raiz da plataforma NVOZES. Tenho especial interesse por 
+        engenharia de backend e DevOps, contando com prática em Docker, automatização de deploymnets via GitHub Actions e infraestrutura como código (IaC) 
+        com Terraform. Atualmente a expandir conhecimentos em MLOps e integração de LLMs. Proativo, orientado para a resolução de problemas complexos
+        e com facilidade de adaptação a novas tecnologias, procuro uma oportunidade de estágio ou função júnior para aplicar e expandir estas competências.">
           Computer Engineering graduate with hands-on full-stack experience, 
           building backend REST APIs in Golang and Java, relational databases, and React/Next.js frontends, demonstrated by architecting 
           and shipping NVOZES, an end-to-end platform, from scratch.
@@ -230,12 +247,12 @@
     <section class="mb-4">
       <div class="flex items-center gap-3 mb-5">
         <span><i class="fa-solid fa-code"></i></span>
-        <h2 class="text-xl font-semibold">Skills</h2>
+        <h2 class="text-xl font-semibold" data-pt="Competências">Skills</h2>
       </div>
 
       <div class="pl-[2.7rem] space-y-5">
         <div>
-          <h3 class="text-xs uppercase tracking-wide text-gray-500 mb-2.5">Programming Languages</h3>
+          <h3 class="text-xs uppercase tracking-wide text-gray-500 mb-2.5" data-pt="Linguagens de Programação">Programming Languages</h3>
           <div class="flex flex-wrap gap-2">
             <span class="badge">Java</span>
             <span class="badge">Golang</span>
@@ -245,7 +262,7 @@
           </div>
         </div>
         <div>
-          <h3 class="text-xs uppercase tracking-wide text-gray-500 mb-2.5">Other Technical Skills</h3>
+          <h3 class="text-xs uppercase tracking-wide text-gray-500 mb-2.5" data-pt="Outras Competências Técnicas">Other Technical Skills</h3>
           <div class="flex flex-wrap gap-2">
             <span class="badge">REST API</span>
             <span class="badge">Flutter</span>
@@ -262,13 +279,13 @@
           </div>
         </div>
         <div>
-          <h3 class="text-xs uppercase tracking-wide text-gray-500 mb-2.5">Soft Skills</h3>
+          <h3 class="text-xs uppercase tracking-wide text-gray-500 mb-2.5" data-pt="Competências Interpessoais">Soft Skills</h3>
           <div class="flex flex-wrap gap-2">
-            <span class="badge">Teamwork</span>
-            <span class="badge">Communication</span>
-            <span class="badge">Problem Solving</span>
-            <span class="badge">Adaptability</span>
-            <span class="badge">Eager to Learn</span>
+            <span class="badge" data-pt="Trabalho em Equipa">Teamwork</span>
+            <span class="badge" data-pt="Comunicação">Communication</span>
+            <span class="badge" data-pt="Resolução de Problemas">Problem Solving</span>
+            <span class="badge" data-pt="Adaptabilidade">Adaptability</span>
+            <span class="badge" data-pt="Vontade de Aprender">Eager to Learn</span>
           </div>
         </div>
       </div>
@@ -278,7 +295,7 @@
     <section class="mb-4">
       <div class="flex items-center gap-3 mb-6">
         <span><i class="fa-solid fa-briefcase"></i></span>
-        <h2 class="text-xl font-semibold">Work Experience</h2>
+        <h2 class="text-xl font-semibold" data-pt="Experiência Profissional">Work Experience</h2>
       </div>
 
         <div class="timeline timeline--logos">
@@ -290,15 +307,15 @@
             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Crect width=%2724%27 height=%2724%27 fill=%27%23e5e7eb%27/%3E%3C/svg%3E'" />
           </span>
           <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <h3 class="font-semibold text-[0.98rem]">Fitness Instructor</h3>
+            <h3 class="font-semibold text-[0.98rem]" data-pt="Instrutor de Fitness">Fitness Instructor</h3>
             <span class="font-mono text-xs text-gray-500 whitespace-nowrap">
-              <span class="live-dot" title="Ongoing"></span>2020 — Present
+              <span class="live-dot" title="Ongoing" data-pt-title="Em curso"></span><span data-pt="2020 - Atual">2020 - Present</span>
             </span>
           </div>
-          <p class="text-sm text-gray-500 mb-2">Clube de Carnaxide Cultura e Desporto · Lisbon, Portugal</p>
+          <p class="text-sm text-gray-500 mb-2" data-pt="Clube de Carnaxide Cultura e Desporto · Lisboa, Portugal">Clube de Carnaxide Cultura e Desporto · Lisbon, Portugal</p>
           <ul class="text-sm text-gray-700 space-y-1.5 list-disc list-outside ml-4">
-            <li>Managed fitness floor operations autonomously, tailoring training programs for hundreds of clients.</li>
-            <li>Built strong client relationships through communication and motivation strategies, developing informal leadership skills along the way.</li>
+            <li data-pt="Gestão autónoma das operações da sala de exercício, personalizando programas de treino para centenas de clientes.">Managed fitness floor operations autonomously, tailoring training programs for hundreds of clients.</li>
+            <li data-pt="Fomentação de relações fortes com os clientes através de estratégias de comunicação e motivação, desenvolvendo ao longo do percurso competências de liderança informal.">Built strong client relationships through communication and motivation strategies, developing informal leadership skills along the way.</li>
           </ul>
         </div>
 
@@ -309,13 +326,13 @@
             onerror="this.onerror=null;this.src='data:image/svg+xml;utf8,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 24 24%27%3E%3Crect width=%2724%27 height=%2724%27 fill=%27%23e5e7eb%27/%3E%3C/svg%3E'" />
           </span>
           <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <h3 class="font-semibold text-[0.98rem]">Member</h3>
-            <span class="font-mono text-xs text-gray-500 whitespace-nowrap">Sep 2025 — Jul 2026</span>
+            <h3 class="font-semibold text-[0.98rem]" data-pt="Membro">Member</h3>
+            <span class="font-mono text-xs text-gray-500 whitespace-nowrap" data-pt="Set 2025 - Jul 2026">Sep 2025 - Jul 2026</span>
           </div>
-          <p class="text-sm text-gray-500 mb-2">NEDI - Informatics Department Student Branch · Lisbon, Portugal</p>
+          <p class="text-sm text-gray-500 mb-2" data-pt="NEDI - Núcleo de Estudantes do Departamento de Informática · Lisboa, Portugal">NEDI - Informatics Department Student Branch · Lisbon, Portugal</p>
           <ul class="text-sm text-gray-700 space-y-1.5 list-disc list-outside ml-4">
-            <li>Assisted in organizing and operationalizing major academic events (JobShop, TecWeb, and DeisiFest), bridging the gap between students and the tech job market.</li>
-            <li>Collaborated within a multidisciplinary team to manage logistics and ensure the success of community initiatives in Computer Engineering and Information Systems.</li>
+            <li data-pt="Colaboração na organização e operacionalização de grandes eventos académicos (JobShop, TecWeb e DeisiFest), aproximando os estudantes do mercado de trabalho tecnológico.">Assisted in organizing and operationalizing major academic events (JobShop, TecWeb, and DeisiFest), bridging the gap between students and the tech job market.</li>
+            <li data-pt="Colaboração numa equipa multidisciplinar na gestão logística, garantindo o sucesso de iniciativas da comunidade nas áreas de Engenharia Informática e Sistemas de Informação.">Collaborated within a multidisciplinary team to manage logistics and ensure the success of community initiatives in Computer Engineering and Information Systems.</li>
           </ul>
         </div>
 
@@ -326,24 +343,24 @@
     <section class="mb-4">
       <div class="flex items-center gap-3 mb-6">
         <span><i class="fa-solid fa-graduation-cap"></i></span>
-        <h2 class="text-xl font-semibold">Education</h2>
+        <h2 class="text-xl font-semibold" data-pt="Formação Académica">Education</h2>
       </div>
 
       <div class="pl-[2.7rem] space-y-5">
         <div>
           <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <h3 class="font-semibold text-[0.98rem]">BSc in Computer Engineering</h3>
-            <span class="font-mono text-xs text-gray-500 whitespace-nowrap">Sep 2023 — Jul 2026</span>
+            <h3 class="font-semibold text-[0.98rem]" data-pt="Licenciatura em Engenharia Informática">BSc in Computer Engineering</h3>
+            <span class="font-mono text-xs text-gray-500 whitespace-nowrap" data-pt="Set 2023 - Jul 2026">Sep 2023 - Jul 2026</span>
           </div>
-          <p class="text-sm text-gray-500">Universidade Lusófona de Lisboa · Lisbon, Portugal</p>
+          <p class="text-sm text-gray-500" data-pt="Universidade Lusófona de Lisboa · Lisboa, Portugal">Universidade Lusófona de Lisboa · Lisbon, Portugal</p>
         </div>
 
         <div>
           <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <h3 class="font-semibold text-[0.98rem]">IPICS25 — Intensive Programme on Information and Communication Security</h3>
+            <h3 class="font-semibold text-[0.98rem]" data-pt="IPICS25 - Programa Intensivo de Segurança da Informação e Comunicação">IPICS25 - Intensive Programme on Information and Communication Security</h3>
             <span class="font-mono text-xs text-gray-500 whitespace-nowrap">Jul 2025</span>
           </div>
-          <p class="text-sm text-gray-500">CyberSecPro · Novi Sad, Serbia</p>
+          <p class="text-sm text-gray-500" data-pt="CyberSecPro · Novi Sad, Sérvia">CyberSecPro · Novi Sad, Serbia</p>
         </div>
       </div>
     </section>
@@ -352,22 +369,22 @@
     <section class="mb-4">
       <div class="flex items-center gap-3 mb-6">
         <span><i class="fa-solid fa-diagram-project"></i></span>
-        <h2 class="text-xl font-semibold">Projects</h2>
+        <h2 class="text-xl font-semibold" data-pt="Projetos">Projects</h2>
       </div>
 
       <div class="pl-[2.7rem]">
         <div class="rounded-xl border border-gray-200 p-5 sm:p-6">
           <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1 mb-1">
-            <h3 class="font-semibold text-[0.98rem]">NVOZES - Final Degree Project</h3>
-            <span class="font-mono text-xs text-gray-500 whitespace-nowrap">Sep 2025 — Jul 2026</span>
+            <h3 class="font-semibold text-[0.98rem]" data-pt="NVOZES - Projeto Final de Curso">NVOZES - Final Degree Project</h3>
+            <span class="font-mono text-xs text-gray-500 whitespace-nowrap" data-pt="Set 2025 - Jul 2026">Sep 2025 - Jul 2026</span>
           </div>
-          <p class="text-sm text-gray-500 mb-2">Full Stack Developer</p>
+          <p class="text-sm text-gray-500 mb-2" data-pt="Desenvolvedor Full Stack">Full Stack Developer</p>
 
           <ul class="text-sm text-gray-700 space-y-1.5 list-disc list-outside ml-4 mb-4">
-            <li>Planned, architected, and fully developed an end-to-end digital platform designed to connect young entrepreneurs from CPLP countries with partner and investor networks.</li>
-            <li>Developed a backend REST API using Golang and PostgreSQL.</li>
-            <li>Created two independent, responsive frontends (an institutional portal and an authenticated user dashboard) using React and Next.js.</li>
-            <li>Implemented automated CI/CD pipelines via GitHub Actions and fully containerized the infrastructure using Docker and Nginx.</li>
+            <li data-pt="Planeamento, arquitetura e desenvolvimento integral de uma plataforma digital completa, concebida para ligar jovens empreendedores dos países da CPLP a redes de parceiros e investidores.">Planned, architected, and fully developed an end-to-end digital platform designed to connect young entrepreneurs from CPLP countries with partner and investor networks.</li>
+            <li data-pt="Desenvolvimento de uma API REST utilizando Golang e PostgreSQL.">Developed a backend REST API using Golang and PostgreSQL.</li>
+            <li data-pt="Criação de dois frontends independentes e responsivos (um portal institucional e um painel de utilizador autenticado) utilizando React e Next.js.">Created two independent, responsive frontends (an institutional portal and an authenticated user dashboard) using React and Next.js.</li>
+            <li data-pt="Implementação de pipelines de CI/CD automatizados através do GitHub Actions e contentorização total da infraestrutura utilizando Docker e Nginx.">Implemented automated CI/CD pipelines via GitHub Actions and fully containerized the infrastructure using Docker and Nginx.</li>
           </ul>
 
           <div class="flex flex-wrap gap-2">
@@ -402,7 +419,7 @@
         
           No certifications listed yet. Add each new one as a block identical
           to the commented example below (copy it, remove the comment marks,
-          and fill in your own details) — it follows the same layout used in
+          and fill in your own details) - it follows the same layout used in
           the Projects section above.
 
         <div class="rounded-xl border border-gray-200 p-5 sm:p-6 mb-4">
@@ -429,7 +446,7 @@
         </div>
         
 
-        <p class="text-sm text-gray-400 italic">No certifications added yet — see the code comment above for how to add one.</p>
+        <p class="text-sm text-gray-400 italic">No certifications added yet - see the code comment above for how to add one.</p>
       </div>
     </section>
     -->
@@ -438,16 +455,16 @@
     <section class="mb-16">
       <div class="flex items-center gap-3 mb-6">
         <span><i class="fa-solid fa-calendar-days"></i></span>
-        <h2 class="text-xl font-semibold">Events and Conferences</h2>
+        <h2 class="text-xl font-semibold" data-pt="Eventos e Conferências">Events and Conferences</h2>
       </div>
 
       <div class="pl-[2.7rem] space-y-5">
         <div>
           <div class="flex flex-wrap items-baseline justify-between gap-x-4 gap-y-1">
-            <h3 class="font-semibold text-[0.98rem]">Bridging young talent with the future of Banking and IT - Seminar</h3>
-            <span class="font-mono text-xs text-gray-500 whitespace-nowrap">May 2026</span>
+            <h3 class="font-semibold text-[0.98rem]" data-pt="A ligação entre jovens talentos e o futuro da Banca e das TI - Seminário">Bridging young talent with the future of Banking and IT - Seminar</h3>
+            <span class="font-mono text-xs text-gray-500 whitespace-nowrap" data-pt="Mai 2026">May 2026</span>
           </div>
-          <p class="text-sm text-gray-500">Speaker · Participant · Universidade Lusófona, Lisbon, Portugal</p>
+          <p class="text-sm text-gray-500" data-pt="Orador · Participante · Universidade Lusófona, Lisboa, Portugal">Speaker · Participant · Universidade Lusófona, Lisbon, Portugal</p>
         </div>
       </div>
     </section>
@@ -455,11 +472,52 @@
     <!-- ============================= FOOTER ============================= -->
     <footer class="pt-8 border-t border-gray-100 text-center">
       <p class="font-mono text-xs text-gray-500">
-        André Cunha · <a href="mailto:amrcunha1@gmail.com" class="hover:text-teal-700">amrcunha1@gmail.com</a> · Lisbon, Portugal
+        André Cunha · <a href="mailto:amrcunha1@gmail.com" class="hover:text-teal-700">amrcunha1@gmail.com</a> · <span data-pt="Lisboa, Portugal">Lisbon, Portugal</span>
       </p>
     </footer>
 
   </main>
+
+  <!-- ======================= LANGUAGE TOGGLE LOGIC ======================= -->
+  <script>
+  (function () {
+    var langBtn = document.getElementById('langToggle');
+    var langLabel = document.getElementById('langToggleLabel');
+    var currentLang = 'en';
+
+    // Text-content pairs
+    var textEls = Array.prototype.slice.call(document.querySelectorAll('[data-pt]'));
+    textEls.forEach(function (el) { el.dataset.en = el.textContent; });
+
+    // title="" attribute pairs (e.g. the "Ongoing" tooltip on the live dot)
+    var titleEls = Array.prototype.slice.call(document.querySelectorAll('[data-pt-title]'));
+    titleEls.forEach(function (el) { el.dataset.enTitle = el.getAttribute('title') || ''; });
+
+    // aria-label pairs
+    var ariaEls = Array.prototype.slice.call(document.querySelectorAll('[data-pt-aria]'));
+    ariaEls.forEach(function (el) { el.dataset.enAria = el.getAttribute('aria-label') || ''; });
+
+    function applyLanguage(lang) {
+      textEls.forEach(function (el) {
+        el.textContent = lang === 'pt' ? el.dataset.pt : el.dataset.en;
+      });
+      titleEls.forEach(function (el) {
+        el.setAttribute('title', lang === 'pt' ? el.dataset.ptTitle : el.dataset.enTitle);
+      });
+      ariaEls.forEach(function (el) {
+        el.setAttribute('aria-label', lang === 'pt' ? el.dataset.ptAria : el.dataset.enAria);
+      });
+      document.documentElement.lang = lang === 'pt' ? 'pt-PT' : 'en';
+      langLabel.textContent = lang === 'pt' ? 'EN' : 'PT';
+      langBtn.setAttribute('aria-label', lang === 'pt' ? 'View English version' : 'Ver versão em português');
+      currentLang = lang;
+    }
+
+    langBtn.addEventListener('click', function () {
+      applyLanguage(currentLang === 'en' ? 'pt' : 'en');
+    });
+  })();
+  </script>
 
 </body>
 </html>
